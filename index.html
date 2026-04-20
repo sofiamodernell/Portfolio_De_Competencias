@@ -4,521 +4,556 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio de Competencias — Sofía Modernell</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0f;
-    --surface: #13131a;
-    --surface2: #1c1c27;
-    --border: rgba(255,255,255,0.08);
-    --border-bright: rgba(255,255,255,0.15);
-    --text: #f0f0f8;
-    --muted: #8888aa;
-    --accent1: #ff6b6b;
-    --accent2: #ffd93d;
-    --accent3: #6bcb77;
-    --accent4: #4d96ff;
-    --accent5: #c77dff;
-    --accent6: #ff9f43;
-    --font-display: 'Syne', sans-serif;
-    --font-body: 'Space Grotesk', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --bg: #faf9f7;
+    --surface: #ffffff;
+    --surface-alt: #f4f2ef;
+    --border: #e5e2dc;
+    --border-soft: #ede9e3;
+    --text: #1a1916;
+    --text-mid: #5a5750;
+    --text-muted: #9a9590;
+    --accent: #7c6d5a;
+    --accent-light: #e8e2d9;
+    --accent-warm: #c4956a;
+    --accent-warm-light: #f5ede3;
+    --green: #5a7a5a;
+    --green-light: #eaf0ea;
+    --blue: #4a6a8a;
+    --blue-light: #e6eff5;
+    --rose: #8a5a5a;
+    --rose-light: #f5eaea;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
   }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
+
   body {
     background: var(--bg);
     color: var(--text);
     font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
     overflow-x: hidden;
   }
 
-  /* NAV */
+  /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 3rem;
-    background: rgba(10,10,15,0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
+    padding: 1.1rem 3rem;
+    background: rgba(250,249,247,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-soft);
   }
   .nav-logo {
     font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--accent4);
-    letter-spacing: 0.05em;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
     font-size: 13px;
-    font-weight: 500;
-    color: var(--muted);
+    font-weight: 400;
+    color: var(--text-mid);
     text-decoration: none;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--text); }
 
-  /* HERO */
+  /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 8rem 3rem 4rem;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 8rem 3rem 5rem;
+    border-bottom: 1px solid var(--border);
     position: relative;
-    overflow: hidden;
   }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(77,150,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(77,150,255,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
+  .hero-rule {
+    width: 48px; height: 1px;
+    background: var(--accent-warm);
+    margin-bottom: 2rem;
   }
-  .hero-glow {
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    filter: blur(120px);
-    pointer-events: none;
-    opacity: 0.15;
-  }
-  .glow-1 { background: var(--accent4); top: -100px; right: -100px; }
-  .glow-2 { background: var(--accent5); bottom: -100px; left: -100px; }
-  .glow-3 { background: var(--accent1); top: 40%; left: 40%; }
-
-  .hero-eyebrow {
+  .hero-label {
     font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--accent3);
+    font-size: 11px;
+    color: var(--text-muted);
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    width: 40px; height: 1px;
-    background: var(--accent3);
+    margin-bottom: 1.25rem;
   }
   .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 8vw, 7rem);
-    font-weight: 800;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
   }
-  .hero-name .first { color: var(--text); }
-  .hero-name .last {
-    background: linear-gradient(135deg, var(--accent4), var(--accent5));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .hero-name em {
+    font-style: italic;
+    color: var(--accent-warm);
   }
   .hero-tagline {
-    font-size: 1.25rem;
-    color: var(--muted);
-    max-width: 520px;
-    margin-bottom: 3rem;
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 500px;
     font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
   }
-  .hero-tagline strong { color: var(--accent2); font-weight: 500; }
-
-  .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 3rem; }
+  .hero-chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 3rem;
+  }
   .chip {
     font-family: var(--font-mono);
-    font-size: 11px;
-    padding: 6px 14px;
-    border-radius: 100px;
-    border: 1px solid;
-    letter-spacing: 0.05em;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text-mid);
+    background: var(--surface);
   }
-  .chip-blue  { border-color: var(--accent4); color: var(--accent4); background: rgba(77,150,255,0.08); }
-  .chip-pink  { border-color: var(--accent5); color: var(--accent5); background: rgba(199,125,255,0.08); }
-  .chip-green { border-color: var(--accent3); color: var(--accent3); background: rgba(107,203,119,0.08); }
-  .chip-red   { border-color: var(--accent1); color: var(--accent1); background: rgba(255,107,107,0.08); }
-  .chip-orange { border-color: var(--accent6); color: var(--accent6); background: rgba(255,159,67,0.08); }
-
-  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-  .btn-primary {
-    padding: 14px 28px;
-    background: var(--accent4);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    letter-spacing: 0.03em;
-    transition: opacity 0.2s, transform 0.15s;
-    display: inline-block;
-  }
-  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-  .btn-outline {
-    padding: 14px 28px;
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--border-bright);
-    border-radius: 8px;
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    transition: border-color 0.2s, transform 0.15s;
-    display: inline-block;
-  }
-  .btn-outline:hover { border-color: var(--text); transform: translateY(-1px); }
-
-  /* SECTIONS COMMON */
-  section { padding: 6rem 3rem; }
-  .section-label {
+  .hero-nav-hint {
     font-family: var(--font-mono);
     font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    display: flex; align-items: center; gap: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
   }
-  .section-label::before {
-    content: '';
-    width: 24px; height: 1px;
-    background: currentColor;
+
+  /* ── SECTION COMMON ── */
+  section {
+    padding: 5rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-header {
+    display: flex; align-items: flex-start; gap: 4rem;
+    margin-bottom: 4rem;
+  }
+  .section-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    padding-top: 0.5rem;
+    flex-shrink: 0;
   }
   .section-title {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
   }
   .section-subtitle {
-    color: var(--muted);
-    font-size: 1.05rem;
-    max-width: 560px;
-    margin-bottom: 3.5rem;
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    max-width: 520px;
     font-weight: 300;
+    line-height: 1.8;
   }
 
-  /* ABOUT */
+  /* ── SOBRE MÍ ── */
   #sobre-mi { background: var(--surface); }
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 5rem;
     align-items: start;
-    max-width: 1000px;
+    max-width: 960px;
   }
-  .about-text p { color: var(--muted); margin-bottom: 1.2rem; font-size: 1.05rem; }
-  .about-text p strong { color: var(--text); }
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+  .about-text p {
+    color: var(--text-mid);
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    font-weight: 300;
   }
-  .stat-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.25rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-  }
-  .stat-card.blue::before { background: var(--accent4); }
-  .stat-card.pink::before { background: var(--accent5); }
-  .stat-card.green::before { background: var(--accent3); }
-  .stat-card.orange::before { background: var(--accent6); }
-  .stat-num {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 4px;
-  }
-  .stat-card.blue .stat-num { color: var(--accent4); }
-  .stat-card.pink .stat-num { color: var(--accent5); }
-  .stat-card.green .stat-num { color: var(--accent3); }
-  .stat-card.orange .stat-num { color: var(--accent6); }
-  .stat-label { font-size: 12px; color: var(--muted); font-family: var(--font-mono); letter-spacing: 0.05em; }
+  .about-text p strong { color: var(--text); font-weight: 500; }
 
-  /* COMPETENCIAS */
+  .about-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 0.75rem;
+  }
+  .photo-icon {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted);
+    font-size: 20px;
+  }
+  .photo-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .about-data {
+    margin-top: 2.5rem;
+    display: flex; flex-direction: column; gap: 1px;
+    border: 1px solid var(--border);
+  }
+  .data-row {
+    display: flex;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 13px;
+  }
+  .data-row:last-child { border-bottom: none; }
+  .data-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 10px 16px;
+    min-width: 140px;
+    border-right: 1px solid var(--border-soft);
+    background: var(--surface-alt);
+  }
+  .data-val {
+    padding: 10px 16px;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+
+  /* ── COMPETENCIAS ── */
   #competencias { background: var(--bg); }
-  .comp-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-    gap: 24px;
+  .comp-list {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--border);
+    max-width: 960px;
   }
   .comp-card {
     background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2rem;
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem;
     position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s, transform 0.2s;
+    transition: background 0.2s;
+    cursor: default;
   }
-  .comp-card:hover { border-color: var(--border-bright); transform: translateY(-3px); }
-  .comp-card-accent {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-  }
-  .comp-header {
-    display: flex; align-items: flex-start; justify-content: space-between;
+  .comp-card:last-child { border-bottom: none; }
+  .comp-card:hover { background: var(--surface-alt); }
+  .comp-card-top {
+    display: flex; align-items: center; justify-content: space-between;
     margin-bottom: 1rem;
   }
-  .comp-number {
+  .comp-area {
     font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
   }
   .comp-badge {
     font-family: var(--font-mono);
     font-size: 10px;
-    padding: 3px 10px;
-    border-radius: 100px;
     letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text-muted);
+  }
+  .comp-badge.suf {
+    border-color: var(--green);
+    color: var(--green);
+    background: var(--green-light);
   }
   .comp-title {
     font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 0.75rem;
   }
-  .comp-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
-  .comp-evidencias { margin-bottom: 1.5rem; }
-  .comp-evidencias h4 {
+  .comp-desc {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    font-weight: 300;
+    max-width: 640px;
+    margin-bottom: 2rem;
+  }
+  .comp-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .comp-section-label {
     font-family: var(--font-mono);
     font-size: 10px;
-    color: var(--muted);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-soft);
   }
-  .evidencia-item {
-    display: flex; align-items: center; gap: 10px;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border);
+  .evidencia-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .evidencia-list li {
     font-size: 13px;
-    color: var(--text);
+    color: var(--text-mid);
+    font-weight: 300;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-soft);
+    display: flex; align-items: flex-start; gap: 10px;
+    line-height: 1.5;
   }
-  .evidencia-item:last-child { border-bottom: none; }
-  .ev-dot {
-    width: 6px; height: 6px;
+  .evidencia-list li:last-child { border-bottom: none; }
+  .ev-mark {
+    width: 4px; height: 4px;
     border-radius: 50%;
+    background: var(--accent-warm);
+    margin-top: 7px;
     flex-shrink: 0;
   }
   .comp-reflexion {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1rem;
-    font-size: 13px;
-    color: var(--muted);
+    font-family: var(--font-display);
+    font-size: 1rem;
     font-style: italic;
-    line-height: 1.6;
-  }
-  .comp-reflexion::before {
-    content: '"';
-    font-size: 2rem;
-    font-family: Georgia, serif;
-    line-height: 1;
-    display: block;
-    margin-bottom: 4px;
-    opacity: 0.4;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.8;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent-warm);
   }
 
-  /* COLOR THEMES PER COMPETENCIA */
-  .c1 .comp-card-accent { background: linear-gradient(90deg, var(--accent4), var(--accent5)); }
-  .c1 .comp-title { color: var(--accent4); }
-  .c1 .comp-badge { background: rgba(77,150,255,0.12); color: var(--accent4); border: 1px solid rgba(77,150,255,0.3); }
-  .c1 .ev-dot { background: var(--accent4); }
-
-  .c2 .comp-card-accent { background: linear-gradient(90deg, var(--accent1), var(--accent6)); }
-  .c2 .comp-title { color: var(--accent1); }
-  .c2 .comp-badge { background: rgba(255,107,107,0.12); color: var(--accent1); border: 1px solid rgba(255,107,107,0.3); }
-  .c2 .ev-dot { background: var(--accent1); }
-
-  .c3 .comp-card-accent { background: linear-gradient(90deg, var(--accent5), var(--accent1)); }
-  .c3 .comp-title { color: var(--accent5); }
-  .c3 .comp-badge { background: rgba(199,125,255,0.12); color: var(--accent5); border: 1px solid rgba(199,125,255,0.3); }
-  .c3 .ev-dot { background: var(--accent5); }
-
-  .c4 .comp-card-accent { background: linear-gradient(90deg, var(--accent3), var(--accent4)); }
-  .c4 .comp-title { color: var(--accent3); }
-  .c4 .comp-badge { background: rgba(107,203,119,0.12); color: var(--accent3); border: 1px solid rgba(107,203,119,0.3); }
-  .c4 .ev-dot { background: var(--accent3); }
-
-  /* TRANSVERSALES */
+  /* ── TRANSVERSALES ── */
   #transversales { background: var(--surface); }
   .trans-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    max-width: 960px;
   }
   .trans-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.75rem 1.5rem;
-    transition: border-color 0.3s, transform 0.2s;
+    padding: 2.5rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
   }
-  .trans-card:hover { border-color: var(--border-bright); transform: translateY(-2px); }
-  .trans-icon {
-    width: 44px; height: 44px;
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
+  .trans-card:nth-child(2n) { border-right: none; }
+  .trans-card:nth-child(3), .trans-card:nth-child(4) { border-bottom: none; }
+  .trans-card:hover { background: var(--surface-alt); }
+  .trans-header {
+    display: flex; align-items: center; gap: 12px;
     margin-bottom: 1rem;
+  }
+  .trans-icon {
+    width: 32px; height: 32px;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
   }
   .trans-title {
     font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 800;
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.01em;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--text);
   }
-  .trans-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+  .trans-desc {
+    font-size: 13px;
+    color: var(--text-mid);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
   .trans-evidence {
     font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    padding: 6px 12px;
-    background: var(--surface);
-    border-radius: 6px;
-    border: 1px solid var(--border);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+  .trans-reflexion {
+    margin-top: 1rem;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-mid);
+    font-weight: 300;
+    line-height: 1.8;
+    padding-left: 0.75rem;
+    border-left: 1px solid var(--border);
   }
 
-  /* PROYECTOS */
+  /* ── PROYECTOS ── */
   #proyectos { background: var(--bg); }
   .proj-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    max-width: 960px;
   }
   .proj-card {
     background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.75rem;
-    transition: border-color 0.3s, transform 0.2s;
+    padding: 2rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
     position: relative;
   }
-  .proj-card:hover { border-color: var(--border-bright); transform: translateY(-3px); }
+  .proj-card:nth-child(3n) { border-right: none; }
+  .proj-card:nth-child(4), .proj-card:nth-child(5), .proj-card:nth-child(6) { border-bottom: none; }
+  .proj-card:hover { background: var(--surface-alt); }
+  .proj-status-dot {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    width: 7px; height: 7px; border-radius: 50%;
+  }
+  .dot-done { background: var(--green); }
+  .dot-wip { background: var(--accent-warm); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
   .proj-tag {
     font-family: var(--font-mono);
-    font-size: 10px;
-    padding: 3px 10px;
-    border-radius: 100px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text-muted);
     margin-bottom: 1rem;
     display: inline-block;
-    letter-spacing: 0.08em;
   }
   .proj-title {
     font-family: var(--font-display);
     font-size: 1.1rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 0.75rem;
   }
-  .proj-desc { font-size: 13px; color: var(--muted); margin-bottom: 1.25rem; line-height: 1.6; }
-  .proj-techs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .proj-desc {
+    font-size: 13px;
+    color: var(--text-mid);
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .proj-techs { display: flex; flex-wrap: wrap; gap: 6px; }
   .tech-tag {
     font-family: var(--font-mono);
-    font-size: 10px;
-    padding: 3px 10px;
-    border: 1px solid var(--border-bright);
-    border-radius: 100px;
-    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    background: var(--surface-alt);
+    color: var(--text-muted);
+    border: 1px solid var(--border-soft);
+    border-radius: 2px;
   }
-  .proj-status {
-    position: absolute; top: 1.25rem; right: 1.25rem;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-  }
-  .status-done { background: var(--accent3); box-shadow: 0 0 8px var(--accent3); }
-  .status-wip  { background: var(--accent2); box-shadow: 0 0 8px var(--accent2); animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-  /* CONTACTO */
+  /* ── CONTACTO ── */
   #contacto { background: var(--surface); }
-  .contact-inner {
-    max-width: 680px;
-    text-align: center;
-    margin: 0 auto;
-  }
-  .contact-inner .section-title { font-size: clamp(2rem, 5vw, 3.5rem); }
+  .contact-inner { max-width: 560px; }
   .contact-links {
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--border);
     margin-top: 2.5rem;
   }
   .contact-link {
-    display: flex; align-items: center; gap: 10px;
-    padding: 12px 24px;
-    background: var(--bg);
-    border: 1px solid var(--border-bright);
-    border-radius: 10px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px;
     text-decoration: none;
     color: var(--text);
-    font-size: 14px;
-    font-weight: 500;
-    transition: border-color 0.2s, transform 0.15s;
+    border-bottom: 1px solid var(--border-soft);
+    transition: background 0.15s;
+    font-size: 13px;
+    font-weight: 300;
   }
-  .contact-link:hover { border-color: var(--accent4); transform: translateY(-2px); }
-  .contact-link span { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
-
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 3rem;
-    border-top: 1px solid var(--border);
+  .contact-link:last-child { border-bottom: none; }
+  .contact-link:hover { background: var(--surface-alt); }
+  .contact-link-label {
     font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--muted);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    min-width: 100px;
   }
-  .footer-accent { color: var(--accent4); }
+  .contact-link-val { color: var(--text-mid); }
+  .contact-link-arrow { color: var(--text-muted); font-size: 12px; }
 
-  /* ANIMATIONS */
+  /* ── FOOTER ── */
+  footer {
+    padding: 2.5rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--bg);
+  }
+  .footer-left {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    font-style: italic;
+  }
+  .footer-right {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  /* SCROLLBAR */
-  ::-webkit-scrollbar { width: 6px; }
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
+    section { padding: 3.5rem 1.5rem; }
     .hero { padding: 7rem 1.5rem 3rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .comp-grid { grid-template-columns: 1fr; }
+    .comp-body { grid-template-columns: 1fr; }
+    .trans-grid { grid-template-columns: 1fr; }
+    .trans-card:nth-child(2n) { border-right: none; }
+    .trans-card:nth-child(3) { border-bottom: 1px solid var(--border); }
+    .trans-card:last-child { border-bottom: none; }
+    .proj-grid { grid-template-columns: 1fr; }
+    .proj-card { border-right: none !important; }
+    .section-header { flex-direction: column; gap: 0.5rem; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">SCM // Portfolio 2025</div>
+  <div class="nav-logo">Sofía C. Modernell · UTEC IMEC</div>
   <ul class="nav-links">
+    <li><a href="#sobre-mi">Inicio</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#competencias">Competencias</a></li>
     <li><a href="#transversales">Transversales</a></li>
@@ -527,65 +562,72 @@
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- INICIO / HERO -->
 <section class="hero" id="inicio">
-  <div class="hero-grid"></div>
-  <div class="hero-glow glow-1"></div>
-  <div class="hero-glow glow-2"></div>
-  <div class="hero-glow glow-3"></div>
-  <div style="position:relative; z-index:1;">
-    <div class="hero-eyebrow">Portfolio de Competencias · Evaluación Intermedia · UTEC 2025</div>
-    <h1 class="hero-name">
-      <div class="first">Sofía Carolina</div>
-      <div class="last">Modernell Peñaloza</div>
-    </h1>
-    <p class="hero-tagline">
-      Estudiante de <strong>Ingeniería en Mecatrónica</strong> en UTEC — semestre 5. Apasionada por la automatización, la electrónica y los sistemas inteligentes.
-    </p>
-    <div class="hero-chips">
-      <span class="chip chip-blue">Electrónica</span>
-      <span class="chip chip-pink">Microcontroladores</span>
-      <span class="chip chip-green">Automatización</span>
-      <span class="chip chip-red">Control</span>
-      <span class="chip chip-orange">Sistemas Embebidos</span>
-    </div>
-    <div class="hero-cta">
-      <a href="#competencias" class="btn-primary">Ver competencias</a>
-      <a href="#proyectos" class="btn-outline">Ver proyectos</a>
-    </div>
+  <div class="hero-rule fade-up"></div>
+  <div class="hero-label fade-up">Portfolio de Competencias · Evaluación Intermedia · UTEC 2025</div>
+  <h1 class="hero-name fade-up">
+    Sofía Carolina<br>
+    <em>Modernell Peñaloza</em>
+  </h1>
+  <p class="hero-tagline fade-up">
+    Estudiante de Ingeniería en Mecatrónica en la Universidad Tecnológica del Uruguay — semestre 5. Este portfolio documenta el desarrollo de mis competencias profesionales y transversales a lo largo de la carrera.
+  </p>
+  <div class="hero-chips fade-up">
+    <span class="chip">Electrónica</span>
+    <span class="chip">Microcontroladores</span>
+    <span class="chip">Automatización</span>
+    <span class="chip">Control</span>
+    <span class="chip">Sistemas Embebidos</span>
+    <span class="chip">IMEC · Plan 2023</span>
   </div>
+  <div class="hero-nav-hint fade-up">↓ Desplazá para explorar el portfolio</div>
 </section>
 
 <!-- SOBRE MÍ -->
 <section id="sobre-mi">
-  <div class="fade-up">
-    <div class="section-label">01 · Perfil</div>
-    <h2 class="section-title">Sobre mí</h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>Soy <strong>Sofía Modernell Peñaloza</strong>, estudiante de Ingeniería en Mecatrónica en la Universidad Tecnológica del Uruguay (UTEC). Actualmente curso el quinto semestre, con evaluación intermedia correspondiente al cuarto semestre.</p>
-        <p>Mi carrera integra las áreas de <strong>mecánica, electrónica, informática y control</strong>, con foco en la automatización de sistemas industriales y el diseño de soluciones tecnológicas innovadoras.</p>
-        <p>A lo largo de mi formación he desarrollado competencias en operación y mantenimiento de sistemas mecatrónicos, diseño de circuitos electrónicos analógicos y digitales, programación de microcontroladores y trabajo en proyectos integradores de competencias.</p>
-        <p>Me motiva <strong>resolver problemas reales</strong> usando tecnología y aprender continuamente en un área en constante evolución.</p>
+  <div class="section-header fade-up">
+    <span class="section-num">01</span>
+    <div>
+      <h2 class="section-title">Sobre mí</h2>
+      <p class="section-subtitle">Mi formación, intereses y contexto académico en la carrera de Ingeniería en Mecatrónica.</p>
+    </div>
+  </div>
+
+  <div class="about-grid fade-up">
+    <div>
+      <!-- Foto -->
+      <div class="about-photo-placeholder">
+        <div class="photo-icon">👤</div>
+        <div class="photo-label">Foto de perfil</div>
       </div>
-      <div>
-        <div class="about-stats">
-          <div class="stat-card blue">
-            <div class="stat-num">5°</div>
-            <div class="stat-label">Semestre actual</div>
-          </div>
-          <div class="stat-card pink">
-            <div class="stat-num">4</div>
-            <div class="stat-label">Áreas de dominio</div>
-          </div>
-          <div class="stat-card green">
-            <div class="stat-num">+20</div>
-            <div class="stat-label">Laboratorios realizados</div>
-          </div>
-          <div class="stat-card orange">
-            <div class="stat-num">2+</div>
-            <div class="stat-label">Proyectos integradores</div>
-          </div>
+    </div>
+    <div class="about-text">
+      <p>Soy <strong>Sofía Modernell Peñaloza</strong>, estudiante de Ingeniería en Mecatrónica en la Universidad Tecnológica del Uruguay (UTEC). Actualmente curso el quinto semestre, con evaluación intermedia correspondiente al cuarto semestre.</p>
+      <p>Mi carrera integra las áreas de <strong>mecánica, electrónica, informática y control</strong>, con foco en la automatización de sistemas industriales y el diseño de soluciones tecnológicas innovadoras.</p>
+      <p>A lo largo de mi formación he desarrollado competencias en operación y mantenimiento de sistemas mecatrónicos, diseño de circuitos electrónicos, programación de microcontroladores y trabajo en proyectos integradores.</p>
+      <p>Me motiva <strong>resolver problemas reales</strong> usando tecnología y aprender de forma continua en un área en constante evolución.</p>
+
+      <div class="about-data">
+        <div class="data-row">
+          <span class="data-label">Carrera</span>
+          <span class="data-val">Ingeniería en Mecatrónica</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Institución</span>
+          <span class="data-val">UTEC · Plan IMEC 2023</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Semestre actual</span>
+          <span class="data-val">5.° semestre</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Evaluación</span>
+          <span class="data-val">Intermedia — 4.° semestre</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Áreas de dominio</span>
+          <span class="data-val">4 competencias profesionales</span>
         </div>
       </div>
     </div>
@@ -594,244 +636,303 @@
 
 <!-- COMPETENCIAS PROFESIONALES -->
 <section id="competencias">
-  <div class="fade-up">
-    <div class="section-label">02 · Competencias profesionales</div>
-    <h2 class="section-title">Áreas de dominio</h2>
-    <p class="section-subtitle">Las cuatro competencias profesionales definidas en el perfil de egreso del Tecnólogo en Mecatrónica — UTEC IMEC 2023.</p>
-    <div class="comp-grid">
-
-      <!-- C1: OPERACIÓN -->
-      <div class="comp-card c1 fade-up">
-        <div class="comp-card-accent"></div>
-        <div class="comp-header">
-          <span class="comp-number">ÁREA 01</span>
-          <span class="comp-badge">Nivel en desarrollo</span>
-        </div>
-        <h3 class="comp-title">Operación de sistemas mecatrónicos</h3>
-        <p class="comp-desc">Implementación de software y hardware para el correcto desempeño de procesos industriales; verificación de capacidad operacional y puesta en servicio.</p>
-        <div class="comp-evidencias">
-          <h4>Evidencias</h4>
-          <div class="evidencia-item"><span class="ev-dot"></span>Laboratorios de Electrónica Analógica Aplicada — análisis de circuitos amplificadores y filtros</div>
-          <div class="evidencia-item"><span class="ev-dot"></span>Laboratorios de Aplicaciones Electro Industriales — instalaciones y conexiones industriales</div>
-          <div class="evidencia-item"><span class="ev-dot"></span>Informe de Tecnologías de Microprocesamiento — implementación de firmware en microcontroladores</div>
-        </div>
-        <div class="comp-reflexion">Cada laboratorio me permitió poner en práctica los conocimientos teóricos, aprendiendo a identificar fallas y seguir procedimientos para garantizar el funcionamiento correcto de los sistemas.</div>
-      </div>
-
-      <!-- C2: MANTENIMIENTO -->
-      <div class="comp-card c2 fade-up">
-        <div class="comp-card-accent"></div>
-        <div class="comp-header">
-          <span class="comp-number">ÁREA 02</span>
-          <span class="comp-badge">Nivel en desarrollo</span>
-        </div>
-        <h3 class="comp-title">Mantenimiento de sistemas mecatrónicos</h3>
-        <p class="comp-desc">Ejecución de planes de mantenimiento preventivo y correctivo, aplicando procedimientos y metodologías basadas en la confiabilidad.</p>
-        <div class="comp-evidencias">
-          <h4>Evidencias</h4>
-          <div class="evidencia-item"><span class="ev-dot"></span>Laboratorios de Electrónica Digital 1 — diagnóstico y verificación de circuitos lógicos</div>
-          <div class="evidencia-item"><span class="ev-dot"></span>Prácticas con equipos de medición — osciloscopio, multímetro, generador de señales</div>
-          <div class="evidencia-item"><span class="ev-dot"></span>Seguimiento y documentación de funcionamiento de sistemas automatizados</div>
-        </div>
-        <div class="comp-reflexion">Aprendí que el mantenimiento no es solo reparar cuando algo falla, sino anticiparse: identificar señales de deterioro y actuar antes de que el sistema falle.</div>
-      </div>
-
-      <!-- C3: DISEÑO -->
-      <div class="comp-card c3 fade-up">
-        <div class="comp-card-accent"></div>
-        <div class="comp-header">
-          <span class="comp-number">ÁREA 03</span>
-          <span class="comp-badge">Nivel en desarrollo</span>
-        </div>
-        <h3 class="comp-title">Diseño de sistemas mecatrónicos</h3>
-        <p class="comp-desc">Fabricación de equipos y sistemas mecatrónicos según diseño; incorporación de tecnologías evaluadas y generación de insumos para diseño o rediseño.</p>
-        <div class="comp-evidencias">
-          <h4>Evidencias</h4>
-          <div class="evidencia-item"><span class="ev-dot"></span>Proyecto Integrador de Competencias 1 — diseño y prototipado de sistema electrónico</div>
-          <div class="evidencia-item"><span class="ev-dot"></span>Proyecto Integrador de Competencias 2 — integración de hardware y software</div>
-          <div class="evidencia-item"><span class="ev-dot"></span>Dibujo Computarizado (CAD) — modelado de componentes mecánicos</div>
-        </div>
-        <div class="comp-reflexion">Los proyectos integradores fueron el espacio donde pude ver el panorama completo: desde el problema hasta la solución física funcionando, tomando decisiones técnicas reales.</div>
-      </div>
-
-      <!-- C4: INNOVACIÓN -->
-      <div class="comp-card c4 fade-up">
-        <div class="comp-card-accent"></div>
-        <div class="comp-header">
-          <span class="comp-number">ÁREA 04</span>
-          <span class="comp-badge">Nivel en desarrollo</span>
-        </div>
-        <h3 class="comp-title">Innovación e investigación en sistemas mecatrónicos</h3>
-        <p class="comp-desc">Reconocimiento de paradigmas tecnológicos, fabricación de prototipos y colaboración en la integración de nuevas tecnologías a sistemas mecatrónicos.</p>
-        <div class="comp-evidencias">
-          <h4>Evidencias</h4>
-          <div class="evidencia-item"><span class="ev-dot"></span>Laboratorios de Tecnologías de Microprocesamiento — programación de Arduino y STM32</div>
-          <div class="evidencia-item"><span class="ev-dot"></span>Exploración de sensores y actuadores en prototipos experimentales</div>
-          <div class="evidencia-item"><span class="ev-dot"></span>Práctica Profesional Curricular (PPC) — iniciando fase de relevamiento</div>
-        </div>
-        <div class="comp-reflexion">La innovación empieza por curiosidad. En cada laboratorio intenté ir más allá de lo requerido: ¿qué pasa si cambio este parámetro? ¿Cómo podría mejorarse este sistema?</div>
-      </div>
-
+  <div class="section-header fade-up">
+    <span class="section-num">02</span>
+    <div>
+      <h2 class="section-title">Competencias profesionales</h2>
+      <p class="section-subtitle">Las cuatro áreas de dominio del perfil de egreso del Tecnólogo en Mecatrónica, según el Plan IMEC 2023 de UTEC.</p>
     </div>
+  </div>
+
+  <div class="comp-list">
+
+    <!-- C1: OPERACIÓN -->
+    <div class="comp-card fade-up">
+      <div class="comp-card-top">
+        <span class="comp-area">Área 01</span>
+        <span class="comp-badge">En desarrollo</span>
+      </div>
+      <h3 class="comp-title">Operación de sistemas mecatrónicos</h3>
+      <p class="comp-desc">Implementación de software y hardware para el correcto desempeño de procesos industriales; verificación de capacidad operacional y puesta en servicio de sistemas mecatrónicos.</p>
+      <div class="comp-body">
+        <div>
+          <div class="comp-section-label">Evidencias</div>
+          <ul class="evidencia-list">
+            <li><span class="ev-mark"></span>Laboratorios de Electrónica Analógica Aplicada — análisis de circuitos amplificadores y filtros</li>
+            <li><span class="ev-mark"></span>Laboratorios de Aplicaciones Electro Industriales — instalaciones y conexiones industriales</li>
+            <li><span class="ev-mark"></span>Informe de Tecnologías de Microprocesamiento — implementación de firmware en microcontroladores</li>
+          </ul>
+        </div>
+        <div>
+          <div class="comp-section-label">Reflexión</div>
+          <p class="comp-reflexion">Cada laboratorio me permitió poner en práctica los conocimientos teóricos, aprendiendo a identificar fallas y seguir procedimientos para garantizar el funcionamiento correcto de los sistemas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- C2: MANTENIMIENTO -->
+    <div class="comp-card fade-up">
+      <div class="comp-card-top">
+        <span class="comp-area">Área 02</span>
+        <span class="comp-badge">En desarrollo</span>
+      </div>
+      <h3 class="comp-title">Mantenimiento de sistemas mecatrónicos</h3>
+      <p class="comp-desc">Ejecución de planes de mantenimiento preventivo y correctivo, aplicando procedimientos y metodologías basadas en la confiabilidad de los sistemas.</p>
+      <div class="comp-body">
+        <div>
+          <div class="comp-section-label">Evidencias</div>
+          <ul class="evidencia-list">
+            <li><span class="ev-mark"></span>Laboratorios de Electrónica Digital 1 — diagnóstico y verificación de circuitos lógicos</li>
+            <li><span class="ev-mark"></span>Prácticas con equipos de medición — osciloscopio, multímetro, generador de señales</li>
+            <li><span class="ev-mark"></span>Seguimiento y documentación de sistemas automatizados</li>
+          </ul>
+        </div>
+        <div>
+          <div class="comp-section-label">Reflexión</div>
+          <p class="comp-reflexion">Aprendí que el mantenimiento no es solo reparar cuando algo falla, sino anticiparse: identificar señales de deterioro y actuar antes de que el sistema falle.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- C3: DISEÑO -->
+    <div class="comp-card fade-up">
+      <div class="comp-card-top">
+        <span class="comp-area">Área 03</span>
+        <span class="comp-badge">En desarrollo</span>
+      </div>
+      <h3 class="comp-title">Diseño de sistemas mecatrónicos</h3>
+      <p class="comp-desc">Fabricación de equipos y sistemas mecatrónicos según diseño; incorporación de tecnologías evaluadas y generación de insumos para diseño o rediseño de sistemas.</p>
+      <div class="comp-body">
+        <div>
+          <div class="comp-section-label">Evidencias</div>
+          <ul class="evidencia-list">
+            <li><span class="ev-mark"></span>Proyecto Integrador de Competencias 1 — diseño y prototipado de sistema electrónico</li>
+            <li><span class="ev-mark"></span>Proyecto Integrador de Competencias 2 — integración de hardware y software</li>
+            <li><span class="ev-mark"></span>Dibujo Computarizado (CAD) — modelado de componentes mecánicos</li>
+          </ul>
+        </div>
+        <div>
+          <div class="comp-section-label">Reflexión</div>
+          <p class="comp-reflexion">Los proyectos integradores fueron el espacio donde pude ver el panorama completo: desde el problema hasta la solución física funcionando, tomando decisiones técnicas reales.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- C4: INNOVACIÓN -->
+    <div class="comp-card fade-up">
+      <div class="comp-card-top">
+        <span class="comp-area">Área 04</span>
+        <span class="comp-badge">En desarrollo</span>
+      </div>
+      <h3 class="comp-title">Innovación e investigación en sistemas mecatrónicos</h3>
+      <p class="comp-desc">Reconocimiento de paradigmas tecnológicos, fabricación de prototipos y colaboración en la integración de nuevas tecnologías a sistemas mecatrónicos.</p>
+      <div class="comp-body">
+        <div>
+          <div class="comp-section-label">Evidencias</div>
+          <ul class="evidencia-list">
+            <li><span class="ev-mark"></span>Laboratorios de Tecnologías de Microprocesamiento — Arduino y STM32</li>
+            <li><span class="ev-mark"></span>Exploración de sensores y actuadores en prototipos experimentales</li>
+            <li><span class="ev-mark"></span>Práctica Profesional Curricular (PPC) — fase de relevamiento</li>
+          </ul>
+        </div>
+        <div>
+          <div class="comp-section-label">Reflexión</div>
+          <p class="comp-reflexion">La innovación empieza por curiosidad. En cada laboratorio intenté ir más allá de lo requerido: ¿qué pasa si cambio este parámetro? ¿Cómo podría mejorarse este sistema?</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- COMPETENCIAS TRANSVERSALES -->
 <section id="transversales">
-  <div class="fade-up">
-    <div class="section-label">03 · Competencias transversales</div>
-    <h2 class="section-title">Habilidades transversales</h2>
-    <p class="section-subtitle">Las cuatro competencias clave definidas por UTEC para la formación integral del estudiante de Mecatrónica.</p>
-    <div class="trans-grid">
+  <div class="section-header fade-up">
+    <span class="section-num">03</span>
+    <div>
+      <h2 class="section-title">Competencias transversales</h2>
+      <p class="section-subtitle">Las cuatro competencias clave definidas por UTEC para la formación integral del estudiante de Mecatrónica.</p>
+    </div>
+  </div>
 
-      <div class="trans-card fade-up">
-        <div class="trans-icon" style="background: rgba(77,150,255,0.12);">💬</div>
-        <h3 class="trans-title" style="color: var(--accent4);">Comunicación</h3>
-        <p class="trans-desc">Capacidad de transmitir ideas técnicas con claridad, tanto en forma oral, escrita como multimedial, adaptándome a distintos interlocutores.</p>
-        <div class="trans-evidence">Informes técnicos · Presentaciones · PIC1 y PIC2</div>
+  <div class="trans-grid fade-up">
+    <div class="trans-card">
+      <div class="trans-header">
+        <div class="trans-icon">💬</div>
+        <h3 class="trans-title">Comunicación</h3>
       </div>
+      <p class="trans-desc">Capacidad de transmitir ideas técnicas con claridad, tanto en forma oral, escrita como multimedial, adaptándome a distintos interlocutores.</p>
+      <div class="trans-evidence">Informes técnicos · Presentaciones · PIC 1 y 2</div>
+      <p class="trans-reflexion">Redactar informes y presentar proyectos me enseñó que comunicar bien es tan importante como hacer bien. Aprendí a estructurar ideas complejas de forma clara.</p>
+    </div>
 
-      <div class="trans-card fade-up">
-        <div class="trans-icon" style="background: rgba(107,203,119,0.12);">🤝</div>
-        <h3 class="trans-title" style="color: var(--accent3);">Trabajo en equipo</h3>
-        <p class="trans-desc">Colaboración activa en grupos multidisciplinarios, fomentando la responsabilidad colectiva y la integración de diferentes perspectivas.</p>
-        <div class="trans-evidence">PICs · Laboratorios grupales · Proyectos finales</div>
+    <div class="trans-card">
+      <div class="trans-header">
+        <div class="trans-icon">🤝</div>
+        <h3 class="trans-title">Trabajo en equipo</h3>
       </div>
+      <p class="trans-desc">Colaboración activa en grupos multidisciplinarios, fomentando la responsabilidad colectiva y la integración de diferentes perspectivas.</p>
+      <div class="trans-evidence">PICs · Laboratorios grupales · Proyectos finales</div>
+      <p class="trans-reflexion">Trabajar con personas de distintos perfiles me hizo entender que los mejores resultados emergen cuando cada integrante aporta desde sus fortalezas.</p>
+    </div>
 
-      <div class="trans-card fade-up">
-        <div class="trans-icon" style="background: rgba(199,125,255,0.12);">🧠</div>
-        <h3 class="trans-title" style="color: var(--accent5);">Autorregulación del aprendizaje</h3>
-        <p class="trans-desc">Gestión autónoma del proceso de estudio, identificando fortalezas y áreas de mejora para ajustar estrategias de aprendizaje.</p>
-        <div class="trans-evidence">Horas autónomas · Estudio independiente · Feedback docente</div>
+    <div class="trans-card">
+      <div class="trans-header">
+        <div class="trans-icon">🧠</div>
+        <h3 class="trans-title">Autorregulación del aprendizaje</h3>
       </div>
+      <p class="trans-desc">Gestión autónoma del proceso de estudio, identificando fortalezas y áreas de mejora para ajustar estrategias de aprendizaje.</p>
+      <div class="trans-evidence">Horas autónomas · Estudio independiente · Feedback docente</div>
+      <p class="trans-reflexion">Aprender a estudiar es un proceso en sí mismo. Identificar cuándo necesito repasar, pedir ayuda o cambiar de estrategia fue una de las competencias más valiosas que desarrollé.</p>
+    </div>
 
-      <div class="trans-card fade-up">
-        <div class="trans-icon" style="background: rgba(255,107,107,0.12);">🔍</div>
-        <h3 class="trans-title" style="color: var(--accent1);">Pensamiento crítico</h3>
-        <p class="trans-desc">Análisis reflexivo de situaciones problemáticas, evaluando alternativas y tomando decisiones técnicas fundamentadas.</p>
-        <div class="trans-evidence">Resolución de repartidos · Análisis de circuitos · PIC2</div>
+    <div class="trans-card">
+      <div class="trans-header">
+        <div class="trans-icon">🔍</div>
+        <h3 class="trans-title">Pensamiento crítico</h3>
       </div>
-
+      <p class="trans-desc">Análisis reflexivo de situaciones problemáticas, evaluando alternativas y tomando decisiones técnicas fundamentadas.</p>
+      <div class="trans-evidence">Resolución de repartidos · Análisis de circuitos · PIC 2</div>
+      <p class="trans-reflexion">Ante cada problema aprendí a no quedarme con la primera solución: preguntar "¿por qué?", evaluar alternativas y fundamentar las decisiones con evidencia técnica.</p>
     </div>
   </div>
 </section>
 
-<!-- PROYECTOS -->
+<!-- PROYECTOS / EVIDENCIAS DESTACADAS -->
 <section id="proyectos">
-  <div class="fade-up">
-    <div class="section-label">04 · Trabajos y proyectos</div>
-    <h2 class="section-title">Evidencias destacadas</h2>
-    <p class="section-subtitle">Selección de trabajos prácticos, laboratorios y proyectos que evidencian el desarrollo de competencias a lo largo de la carrera.</p>
-    <div class="proj-grid">
-
-      <div class="proj-card fade-up">
-        <div class="proj-status status-done"></div>
-        <span class="proj-tag" style="background: rgba(107,203,119,0.12); color: var(--accent3); border: 1px solid rgba(107,203,119,0.3);">COMPLETADO</span>
-        <h3 class="proj-title">Proyecto Integrador de Competencias 1</h3>
-        <p class="proj-desc">Diseño e integración de un sistema electrónico que articula conocimientos de circuitos, programación y mecánica, desarrollado en equipo durante el segundo semestre.</p>
-        <div class="proj-techs">
-          <span class="tech-tag">Circuitos</span>
-          <span class="tech-tag">Trabajo en equipo</span>
-          <span class="tech-tag">Documentación</span>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-status status-done"></div>
-        <span class="proj-tag" style="background: rgba(107,203,119,0.12); color: var(--accent3); border: 1px solid rgba(107,203,119,0.3);">COMPLETADO</span>
-        <h3 class="proj-title">Proyecto Integrador de Competencias 2</h3>
-        <p class="proj-desc">Integración de hardware y software para resolver una problemática técnica real, aplicando tecnologías de microprocesamiento y electrónica digital.</p>
-        <div class="proj-techs">
-          <span class="tech-tag">Microcontroladores</span>
-          <span class="tech-tag">Electrónica digital</span>
-          <span class="tech-tag">Programación</span>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-status status-done"></div>
-        <span class="proj-tag" style="background: rgba(77,150,255,0.12); color: var(--accent4); border: 1px solid rgba(77,150,255,0.3);">LABORATORIO</span>
-        <h3 class="proj-title">Laboratorios de Electrónica Analógica</h3>
-        <p class="proj-desc">Serie de laboratorios prácticos con amplificadores operacionales, filtros activos y circuitos de acondicionamiento de señal. Documentación completa con mediciones y análisis.</p>
-        <div class="proj-techs">
-          <span class="tech-tag">Osciloscopio</span>
-          <span class="tech-tag">OpAmps</span>
-          <span class="tech-tag">Filtros</span>
-          <span class="tech-tag">SPICE</span>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-status status-done"></div>
-        <span class="proj-tag" style="background: rgba(77,150,255,0.12); color: var(--accent4); border: 1px solid rgba(77,150,255,0.3);">LABORATORIO</span>
-        <h3 class="proj-title">Laboratorios de Electrónica Digital</h3>
-        <p class="proj-desc">Implementación de circuitos lógicos combinacionales y secuenciales. Diseño y simulación de circuitos con compuertas lógicas, flip-flops y contadores.</p>
-        <div class="proj-techs">
-          <span class="tech-tag">Lógica combinacional</span>
-          <span class="tech-tag">Flip-flops</span>
-          <span class="tech-tag">FPGA</span>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-status status-done"></div>
-        <span class="proj-tag" style="background: rgba(199,125,255,0.12); color: var(--accent5); border: 1px solid rgba(199,125,255,0.3);">LABORATORIO</span>
-        <h3 class="proj-title">Tecnologías de Microprocesamiento</h3>
-        <p class="proj-desc">Programación de microcontroladores para control de periféricos, comunicación serie y gestión de interrupciones. Implementación de proyectos con Arduino y plataformas embebidas.</p>
-        <div class="proj-techs">
-          <span class="tech-tag">Arduino</span>
-          <span class="tech-tag">C/C++</span>
-          <span class="tech-tag">GPIO</span>
-          <span class="tech-tag">UART</span>
-          <span class="tech-tag">I2C</span>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up">
-        <div class="proj-status status-wip"></div>
-        <span class="proj-tag" style="background: rgba(255,217,61,0.12); color: var(--accent2); border: 1px solid rgba(255,217,61,0.3);">EN PROCESO</span>
-        <h3 class="proj-title">Práctica Profesional Curricular (PPC)</h3>
-        <p class="proj-desc">Práctica profesional en empresa del sector industrial. Actualmente en fase de relevamiento inicial, con foco en la operación y mantenimiento de sistemas automatizados.</p>
-        <div class="proj-techs">
-          <span class="tech-tag">Industria real</span>
-          <span class="tech-tag">Relevamiento</span>
-          <span class="tech-tag">Contexto profesional</span>
-        </div>
-      </div>
-
+  <div class="section-header fade-up">
+    <span class="section-num">04</span>
+    <div>
+      <h2 class="section-title">Evidencias destacadas</h2>
+      <p class="section-subtitle">Selección de trabajos prácticos, laboratorios y proyectos que documentan el desarrollo de competencias a lo largo de la carrera.</p>
     </div>
+  </div>
+
+  <div class="proj-grid fade-up">
+
+    <div class="proj-card">
+      <div class="proj-status-dot dot-done"></div>
+      <div class="proj-tag">Completado</div>
+      <h3 class="proj-title">Proyecto Integrador de Competencias 1</h3>
+      <p class="proj-desc">Diseño e integración de un sistema electrónico que articula conocimientos de circuitos, programación y mecánica, desarrollado en equipo durante el segundo semestre.</p>
+      <div class="proj-techs">
+        <span class="tech-tag">Circuitos</span>
+        <span class="tech-tag">Trabajo en equipo</span>
+        <span class="tech-tag">Documentación</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-status-dot dot-done"></div>
+      <div class="proj-tag">Completado</div>
+      <h3 class="proj-title">Proyecto Integrador de Competencias 2</h3>
+      <p class="proj-desc">Integración de hardware y software para resolver una problemática técnica real, aplicando tecnologías de microprocesamiento y electrónica digital.</p>
+      <div class="proj-techs">
+        <span class="tech-tag">Microcontroladores</span>
+        <span class="tech-tag">Electrónica digital</span>
+        <span class="tech-tag">Programación</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-status-dot dot-done"></div>
+      <div class="proj-tag">Laboratorio</div>
+      <h3 class="proj-title">Laboratorios de Electrónica Analógica</h3>
+      <p class="proj-desc">Serie de laboratorios con amplificadores operacionales, filtros activos y circuitos de acondicionamiento de señal. Documentación con mediciones y análisis.</p>
+      <div class="proj-techs">
+        <span class="tech-tag">Osciloscopio</span>
+        <span class="tech-tag">OpAmps</span>
+        <span class="tech-tag">SPICE</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-status-dot dot-done"></div>
+      <div class="proj-tag">Laboratorio</div>
+      <h3 class="proj-title">Laboratorios de Electrónica Digital</h3>
+      <p class="proj-desc">Implementación de circuitos lógicos combinacionales y secuenciales. Diseño y simulación con compuertas lógicas, flip-flops y contadores.</p>
+      <div class="proj-techs">
+        <span class="tech-tag">Lógica combinacional</span>
+        <span class="tech-tag">Flip-flops</span>
+        <span class="tech-tag">FPGA</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-status-dot dot-done"></div>
+      <div class="proj-tag">Laboratorio</div>
+      <h3 class="proj-title">Tecnologías de Microprocesamiento</h3>
+      <p class="proj-desc">Programación de microcontroladores para control de periféricos, comunicación serie y gestión de interrupciones. Proyectos con Arduino y plataformas embebidas.</p>
+      <div class="proj-techs">
+        <span class="tech-tag">Arduino</span>
+        <span class="tech-tag">C/C++</span>
+        <span class="tech-tag">UART</span>
+        <span class="tech-tag">I2C</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-status-dot dot-wip"></div>
+      <div class="proj-tag">En proceso</div>
+      <h3 class="proj-title">Práctica Profesional Curricular</h3>
+      <p class="proj-desc">Práctica profesional en empresa del sector industrial. Actualmente en fase de relevamiento inicial, con foco en operación y mantenimiento de sistemas automatizados.</p>
+      <div class="proj-techs">
+        <span class="tech-tag">Industria real</span>
+        <span class="tech-tag">Relevamiento</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- CONTACTO -->
 <section id="contacto">
+  <div class="section-header fade-up">
+    <span class="section-num">05</span>
+    <div>
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-subtitle">Este portfolio es una evidencia en construcción de mi proceso de aprendizaje. Si sos docente evaluador o querés saber más, aquí mis datos de contacto.</p>
+    </div>
+  </div>
+
   <div class="contact-inner fade-up">
-    <div class="section-label" style="justify-content: center;">05 · Contacto</div>
-    <h2 class="section-title">¿Querés saber más?</h2>
-    <p class="section-subtitle" style="margin: 0 auto 1rem; text-align: center;">Este portfolio es una evidencia viva de mi proceso de aprendizaje. Si sos docente evaluador o tenés interés en contactarme, aquí mis datos.</p>
     <div class="contact-links">
       <a href="mailto:sofia.modernell@utec.edu.uy" class="contact-link">
-        📧 <span>sofia.modernell@utec.edu.uy</span>
+        <span class="contact-link-label">Correo UTEC</span>
+        <span class="contact-link-val">sofia.modernell@utec.edu.uy</span>
+        <span class="contact-link-arrow">↗</span>
       </a>
-      <a href="#" class="contact-link">
-        🎓 <span>UTEC · IMEC · Semestre 5</span>
-      </a>
+      <div class="contact-link">
+        <span class="contact-link-label">Carrera</span>
+        <span class="contact-link-val">Ingeniería en Mecatrónica · UTEC</span>
+        <span class="contact-link-arrow"></span>
+      </div>
+      <div class="contact-link">
+        <span class="contact-link-label">Semestre</span>
+        <span class="contact-link-val">5.° semestre · Plan 2023</span>
+        <span class="contact-link-arrow"></span>
+      </div>
+      <div class="contact-link">
+        <span class="contact-link-label">Evaluación</span>
+        <span class="contact-link-val">Portfolio intermedio — 2025</span>
+        <span class="contact-link-arrow"></span>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>Sofía Carolina Modernell Peñaloza · <span class="footer-accent">Ingeniería en Mecatrónica</span> · UTEC 2025</p>
-  <p style="margin-top: 6px; opacity: 0.5;">Portfolio de Competencias — Evaluación Intermedia</p>
+  <span class="footer-left">Sofía Carolina Modernell Peñaloza</span>
+  <span class="footer-right">UTEC · IMEC · Portfolio 2025</span>
 </footer>
 
 <script>
-const observer = new IntersectionObserver((entries) => {
+const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) e.target.classList.add('visible');
   });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
