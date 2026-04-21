@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio de Competencias — Sofía Carolina Modernell</title>
+
+<!-- FAVICON con iniciales S.M -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1916'/><text x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='600' fill='%23c4956a'>S.M</text></svg>">
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -60,12 +64,9 @@
   }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--text-mid);
-    text-decoration: none;
-    letter-spacing: 0.03em;
-    transition: color 0.2s;
+    font-size: 13px; font-weight: 400;
+    color: var(--text-mid); text-decoration: none;
+    letter-spacing: 0.03em; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--text); }
 
@@ -77,344 +78,265 @@
     border-bottom: 1px solid var(--border);
     position: relative;
   }
-  .hero-rule {
-    width: 48px; height: 1px;
-    background: var(--accent-warm);
-    margin-bottom: 2rem;
-  }
+  .hero-rule { width: 48px; height: 1px; background: var(--accent-warm); margin-bottom: 2rem; }
   .hero-label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--text-muted); letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 1.25rem;
   }
   .hero-name {
     font-family: var(--font-display);
     font-size: clamp(3.5rem, 7vw, 7rem);
-    font-weight: 300;
-    line-height: 1.0;
-    letter-spacing: -0.01em;
-    color: var(--text);
-    margin-bottom: 1.5rem;
+    font-weight: 300; line-height: 1.0;
+    letter-spacing: -0.01em; color: var(--text); margin-bottom: 1.5rem;
   }
-  .hero-name em {
-    font-style: italic;
-    color: var(--accent-warm);
-  }
+  .hero-name em { font-style: italic; color: var(--accent-warm); }
   .hero-tagline {
-    font-size: 1.05rem;
-    color: var(--text-mid);
-    max-width: 500px;
-    font-weight: 300;
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
+    font-size: 1.05rem; color: var(--text-mid);
+    max-width: 500px; font-weight: 300;
+    line-height: 1.8; margin-bottom: 2.5rem;
   }
-  .hero-chips {
-    display: flex; flex-wrap: wrap; gap: 8px;
-    margin-bottom: 3rem;
-  }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 3rem; }
   .chip {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    color: var(--text-mid);
-    background: var(--surface);
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 5px 12px; border: 1px solid var(--border);
+    border-radius: 2px; color: var(--text-mid); background: var(--surface);
   }
   .hero-nav-hint {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 0.08em;
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--text-muted); letter-spacing: 0.08em;
   }
 
   /* ── SECTION COMMON ── */
-  section {
-    padding: 5rem 3rem;
-    border-bottom: 1px solid var(--border);
-  }
+  section { padding: 5rem 3rem; border-bottom: 1px solid var(--border); }
   .section-header {
-    display: flex; align-items: flex-start; gap: 4rem;
-    margin-bottom: 4rem;
+    display: flex; align-items: flex-start; gap: 4rem; margin-bottom: 4rem;
   }
   .section-num {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 0.12em;
-    padding-top: 0.5rem;
-    flex-shrink: 0;
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--text-muted); letter-spacing: 0.12em; padding-top: 0.5rem; flex-shrink: 0;
   }
   .section-title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 300;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    color: var(--text);
-    margin-bottom: 0.75rem;
+    font-weight: 300; line-height: 1.15;
+    letter-spacing: -0.01em; color: var(--text); margin-bottom: 0.75rem;
   }
   .section-subtitle {
-    font-size: 0.95rem;
-    color: var(--text-mid);
-    max-width: 520px;
-    font-weight: 300;
-    line-height: 1.8;
+    font-size: 0.95rem; color: var(--text-mid);
+    max-width: 520px; font-weight: 300; line-height: 1.8;
   }
 
   /* ── SOBRE MÍ ── */
   #sobre-mi { background: var(--surface); }
   .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-    max-width: 960px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start; max-width: 960px;
   }
-  .about-text p {
-    color: var(--text-mid);
-    margin-bottom: 1.25rem;
-    font-size: 1rem;
-    font-weight: 300;
-  }
+  .about-text p { color: var(--text-mid); margin-bottom: 1.25rem; font-size: 1rem; font-weight: 300; }
   .about-text p strong { color: var(--text); font-weight: 500; }
-
   .about-photo-placeholder {
-    width: 100%;
-    aspect-ratio: 3/4;
-    background: var(--surface-alt);
-    border: 1px solid var(--border);
+    width: 100%; aspect-ratio: 3/4;
+    background: var(--surface-alt); border: 1px solid var(--border);
     display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 0.75rem;
+    align-items: center; justify-content: center; gap: 0.75rem;
   }
-  .photo-icon {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background: var(--border);
+  .photo-initials {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--accent-warm-light); border: 1px solid var(--accent-warm);
     display: flex; align-items: center; justify-content: center;
-    color: var(--text-muted);
-    font-size: 20px;
+    font-family: var(--font-display); font-size: 1.5rem;
+    color: var(--accent-warm); font-style: italic; font-weight: 400;
   }
   .photo-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;
   }
   .about-data {
-    margin-top: 2.5rem;
-    display: flex; flex-direction: column; gap: 1px;
-    border: 1px solid var(--border);
+    margin-top: 2.5rem; display: flex; flex-direction: column;
+    gap: 1px; border: 1px solid var(--border);
   }
-  .data-row {
-    display: flex;
-    border-bottom: 1px solid var(--border-soft);
-    font-size: 13px;
-  }
+  .data-row { display: flex; border-bottom: 1px solid var(--border-soft); font-size: 13px; }
   .data-row:last-child { border-bottom: none; }
   .data-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    padding: 10px 16px;
-    min-width: 140px;
-    border-right: 1px solid var(--border-soft);
-    background: var(--surface-alt);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted);
+    padding: 10px 16px; min-width: 140px;
+    border-right: 1px solid var(--border-soft); background: var(--surface-alt);
   }
-  .data-val {
-    padding: 10px 16px;
-    color: var(--text-mid);
-    font-weight: 300;
+  .data-val { padding: 10px 16px; color: var(--text-mid); font-weight: 300; }
+
+  /* ── LOGROS Y CERTIFICACIONES ── */
+  #logros { background: var(--bg); }
+  .logros-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; border: 1px solid var(--border); max-width: 960px;
+  }
+  .logro-card {
+    padding: 2rem; border-right: 1px solid var(--border);
+    background: var(--surface); transition: background 0.2s;
+  }
+  .logro-card:last-child { border-right: none; }
+  .logro-card:hover { background: var(--surface-alt); }
+  .logro-icon {
+    font-size: 1.5rem; margin-bottom: 1rem; display: block;
+  }
+  .logro-tipo {
+    font-family: var(--font-mono); font-size: 9px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 0.5rem;
+  }
+  .logro-title {
+    font-family: var(--font-display); font-size: 1.1rem;
+    font-weight: 400; color: var(--text); margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .logro-desc { font-size: 13px; color: var(--text-mid); font-weight: 300; line-height: 1.6; margin-bottom: 1rem; }
+  .logro-badge {
+    font-family: var(--font-mono); font-size: 10px;
+    padding: 3px 10px; border-radius: 2px;
+    border: 1px solid var(--green); color: var(--green);
+    background: var(--green-light); display: inline-block; letter-spacing: 0.06em;
+  }
+  .logro-badge.blue {
+    border-color: var(--blue); color: var(--blue); background: var(--blue-light);
+  }
+  .logro-badge.warm {
+    border-color: var(--accent-warm); color: var(--accent-warm); background: var(--accent-warm-light);
   }
 
   /* ── COMPETENCIAS ── */
-  #competencias { background: var(--bg); }
+  #competencias { background: var(--surface); }
   .comp-list {
     display: flex; flex-direction: column; gap: 0;
-    border: 1px solid var(--border);
-    max-width: 960px;
+    border: 1px solid var(--border); max-width: 960px;
   }
   .comp-card {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 2.5rem;
-    position: relative;
-    transition: background 0.2s;
-    cursor: default;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 2.5rem; position: relative; transition: background 0.2s; cursor: default;
   }
   .comp-card:last-child { border-bottom: none; }
   .comp-card:hover { background: var(--surface-alt); }
   .comp-card-top {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 1rem;
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;
   }
   .comp-area {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);
   }
   .comp-badge {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    color: var(--text-muted);
-  }
-  .comp-badge.suf {
-    border-color: var(--green);
-    color: var(--green);
-    background: var(--green-light);
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 10px; border: 1px solid var(--border);
+    border-radius: 2px; color: var(--text-muted);
   }
   .comp-title {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.2;
-    color: var(--text);
-    margin-bottom: 0.75rem;
+    font-family: var(--font-display); font-size: 1.5rem;
+    font-weight: 400; line-height: 1.2; color: var(--text); margin-bottom: 0.75rem;
   }
   .comp-desc {
-    font-size: 0.9rem;
-    color: var(--text-mid);
-    font-weight: 300;
-    max-width: 640px;
-    margin-bottom: 2rem;
+    font-size: 0.9rem; color: var(--text-mid);
+    font-weight: 300; max-width: 640px; margin-bottom: 2rem;
   }
   .comp-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem;
   }
   .comp-section-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-soft);
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-soft);
   }
   .evidencia-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
   .evidencia-list li {
-    font-size: 13px;
-    color: var(--text-mid);
-    font-weight: 300;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border-soft);
-    display: flex; align-items: flex-start; gap: 10px;
-    line-height: 1.5;
+    font-size: 13px; color: var(--text-mid); font-weight: 300;
+    padding: 8px 0; border-bottom: 1px solid var(--border-soft);
+    display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
   }
   .evidencia-list li:last-child { border-bottom: none; }
   .ev-mark {
-    width: 4px; height: 4px;
-    border-radius: 50%;
-    background: var(--accent-warm);
-    margin-top: 7px;
-    flex-shrink: 0;
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--accent-warm); margin-top: 7px; flex-shrink: 0;
   }
   .comp-reflexion {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--text-mid);
-    line-height: 1.8;
-    padding-left: 1rem;
-    border-left: 2px solid var(--accent-warm);
+    font-family: var(--font-display); font-size: 1rem;
+    font-style: italic; font-weight: 300;
+    color: var(--text-mid); line-height: 1.8;
+    padding-left: 1rem; border-left: 2px solid var(--accent-warm);
   }
 
+  /* Drive link button */
+  .drive-link-row {
+    display: flex; align-items: center; gap: 12px;
+    padding-top: 1.25rem; border-top: 1px solid var(--border-soft);
+    margin-top: 0.5rem;
+  }
+  .drive-link-label {
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .drive-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 5px 12px; border: 1px solid var(--border);
+    border-radius: 2px; color: var(--text-mid);
+    background: var(--bg); text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .drive-btn:hover { border-color: var(--accent-warm); color: var(--accent-warm); }
+  .drive-btn svg { width: 12px; height: 12px; opacity: 0.6; }
+
   /* ── TRANSVERSALES ── */
-  #transversales { background: var(--surface); }
+  #transversales { background: var(--bg); }
   .trans-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    border: 1px solid var(--border);
-    max-width: 960px;
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 0; border: 1px solid var(--border); max-width: 960px;
   }
   .trans-card {
-    padding: 2.5rem;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    transition: background 0.2s;
+    padding: 2.5rem; border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border); transition: background 0.2s;
+    background: var(--surface);
   }
   .trans-card:nth-child(2n) { border-right: none; }
   .trans-card:nth-child(3), .trans-card:nth-child(4) { border-bottom: none; }
   .trans-card:hover { background: var(--surface-alt); }
-  .trans-header {
-    display: flex; align-items: center; gap: 12px;
-    margin-bottom: 1rem;
-  }
+  .trans-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
   .trans-icon {
-    width: 32px; height: 32px;
-    border: 1px solid var(--border);
+    width: 32px; height: 32px; border: 1px solid var(--border);
     display: flex; align-items: center; justify-content: center;
-    font-size: 14px;
-    flex-shrink: 0;
+    font-size: 14px; flex-shrink: 0;
   }
-  .trans-title {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 400;
-    color: var(--text);
+  .trans-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 400; color: var(--text); }
+  .trans-desc { font-size: 13px; color: var(--text-mid); font-weight: 300; line-height: 1.7; margin-bottom: 1rem; }
+  .trans-evidence-list { list-style: none; margin-bottom: 1rem; }
+  .trans-evidence-list li {
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: 0.05em; color: var(--text-muted); text-transform: uppercase;
+    padding: 5px 0; border-bottom: 1px solid var(--border-soft);
+    display: flex; align-items: center; gap: 8px;
   }
-  .trans-desc {
-    font-size: 13px;
-    color: var(--text-mid);
-    font-weight: 300;
-    line-height: 1.7;
-    margin-bottom: 1rem;
-  }
-  .trans-evidence {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.06em;
-    color: var(--text-muted);
-    text-transform: uppercase;
+  .trans-evidence-list li:last-child { border-bottom: none; }
+  .trans-ev-dot {
+    width: 3px; height: 3px; border-radius: 50%;
+    background: var(--accent-warm); flex-shrink: 0;
   }
   .trans-reflexion {
-    margin-top: 1rem;
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-style: italic;
-    color: var(--text-mid);
-    font-weight: 300;
-    line-height: 1.8;
-    padding-left: 0.75rem;
-    border-left: 1px solid var(--border);
+    margin-top: 1rem; font-family: var(--font-display);
+    font-size: 0.95rem; font-style: italic;
+    color: var(--text-mid); font-weight: 300; line-height: 1.8;
+    padding-left: 0.75rem; border-left: 1px solid var(--border);
   }
 
   /* ── PROYECTOS ── */
-  #proyectos { background: var(--bg); }
+  #proyectos { background: var(--surface); }
   .proj-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border: 1px solid var(--border);
-    max-width: 960px;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; border: 1px solid var(--border); max-width: 960px;
   }
   .proj-card {
-    background: var(--surface);
-    padding: 2rem;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    transition: background 0.2s;
-    position: relative;
+    background: var(--surface); padding: 2rem;
+    border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    transition: background 0.2s; position: relative;
   }
   .proj-card:nth-child(3n) { border-right: none; }
   .proj-card:nth-child(4), .proj-card:nth-child(5), .proj-card:nth-child(6) { border-bottom: none; }
@@ -427,106 +349,63 @@
   .dot-wip { background: var(--accent-warm); animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
   .proj-tag {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    display: inline-block;
+    font-family: var(--font-mono); font-size: 9px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 8px; border: 1px solid var(--border);
+    border-radius: 2px; color: var(--text-muted);
+    margin-bottom: 1rem; display: inline-block;
   }
   .proj-title {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 400;
-    line-height: 1.3;
-    color: var(--text);
-    margin-bottom: 0.75rem;
+    font-family: var(--font-display); font-size: 1.1rem;
+    font-weight: 400; line-height: 1.3; color: var(--text); margin-bottom: 0.75rem;
   }
-  .proj-desc {
-    font-size: 13px;
-    color: var(--text-mid);
-    font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-  }
-  .proj-techs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .proj-desc { font-size: 13px; color: var(--text-mid); font-weight: 300; line-height: 1.6; margin-bottom: 1.25rem; }
+  .proj-techs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
   .tech-tag {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    background: var(--surface-alt);
-    color: var(--text-muted);
-    border: 1px solid var(--border-soft);
-    border-radius: 2px;
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 3px 8px;
+    border: 1px solid var(--border-soft); border-radius: 2px; color: var(--text-muted);
   }
+  .proj-drive-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--font-mono); font-size: 9px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+    border-bottom: 1px solid var(--border); padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .proj-drive-link:hover { color: var(--accent-warm); border-color: var(--accent-warm); }
 
   /* ── CONTACTO ── */
-  #contacto { background: var(--surface); }
-  .contact-inner { max-width: 560px; }
-  .contact-links {
-    display: flex; flex-direction: column; gap: 0;
-    border: 1px solid var(--border);
-    margin-top: 2.5rem;
-  }
+  #contacto { background: var(--bg); }
+  .contact-inner { max-width: 580px; }
+  .contact-links { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
   .contact-link {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 20px;
-    text-decoration: none;
-    color: var(--text);
-    border-bottom: 1px solid var(--border-soft);
-    transition: background 0.15s;
-    font-size: 13px;
-    font-weight: 300;
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-soft);
+    text-decoration: none; color: inherit; transition: background 0.2s;
   }
   .contact-link:last-child { border-bottom: none; }
   .contact-link:hover { background: var(--surface-alt); }
   .contact-link-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    min-width: 100px;
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--text-muted); letter-spacing: 0.08em;
+    text-transform: uppercase; min-width: 100px;
   }
-  .contact-link-val { color: var(--text-mid); }
-  .contact-link-arrow { color: var(--text-muted); font-size: 12px; }
+  .contact-link-val { color: var(--text-mid); font-size: 14px; }
+  .contact-link-arrow { color: var(--text-muted); font-size: 12px; margin-left: auto; }
 
   /* ── FOOTER ── */
   footer {
-    padding: 2.5rem 3rem;
-    display: flex; align-items: center; justify-content: space-between;
-    background: var(--bg);
+    padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; background: var(--bg);
   }
-  .footer-left {
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: var(--text-mid);
-    font-style: italic;
-  }
-  .footer-right {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
+  .footer-left { font-family: var(--font-display); font-size: 0.95rem; font-weight: 300; color: var(--text-mid); font-style: italic; }
+  .footer-right { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
 
   /* ── ANIMATIONS ── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
+  .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  /* ── SCROLLBAR ── */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
@@ -544,6 +423,11 @@
     .trans-card:last-child { border-bottom: none; }
     .proj-grid { grid-template-columns: 1fr; }
     .proj-card { border-right: none !important; }
+    .proj-card:nth-child(n) { border-bottom: 1px solid var(--border); }
+    .proj-card:last-child { border-bottom: none; }
+    .logros-grid { grid-template-columns: 1fr; }
+    .logro-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .logro-card:last-child { border-bottom: none; }
     .section-header { flex-direction: column; gap: 0.5rem; }
   }
 </style>
@@ -553,8 +437,9 @@
 <nav>
   <div class="nav-logo">Sofía C. Modernell · UTEC IMEC</div>
   <ul class="nav-links">
-    <li><a href="#sobre-mi">Inicio</a></li>
+    <li><a href="#inicio">Inicio</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#logros">Logros</a></li>
     <li><a href="#competencias">Competencias</a></li>
     <li><a href="#transversales">Transversales</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
@@ -562,7 +447,7 @@
   </ul>
 </nav>
 
-<!-- INICIO / HERO -->
+<!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-rule fade-up"></div>
   <div class="hero-label fade-up">Portfolio de Competencias · Evaluación Intermedia · UTEC 2025</div>
@@ -596,17 +481,16 @@
 
   <div class="about-grid fade-up">
     <div>
-      <!-- Foto -->
       <div class="about-photo-placeholder">
-        <div class="photo-icon">👤</div>
-        <div class="photo-label">Foto de perfil</div>
+        <div class="photo-initials">S.M</div>
+        <div class="photo-label">Foto de perfil · próximamente</div>
       </div>
     </div>
     <div class="about-text">
       <p>Soy <strong>Sofía Modernell Peñaloza</strong>, estudiante de Ingeniería en Mecatrónica en la Universidad Tecnológica del Uruguay (UTEC). Actualmente curso el quinto semestre, con evaluación intermedia correspondiente al cuarto semestre.</p>
       <p>Mi carrera integra las áreas de <strong>mecánica, electrónica, informática y control</strong>, con foco en la automatización de sistemas industriales y el diseño de soluciones tecnológicas innovadoras.</p>
-      <p>A lo largo de mi formación he desarrollado competencias en operación y mantenimiento de sistemas mecatrónicos, diseño de circuitos electrónicos, programación de microcontroladores y trabajo en proyectos integradores.</p>
-      <p>Me motiva <strong>resolver problemas reales</strong> usando tecnología y aprender de forma continua en un área en constante evolución.</p>
+      <p>A lo largo de mi formación desarrollé competencias técnicas en electrónica, programación de microcontroladores y proyectos integradores. A su vez, participé activamente en la vida institucional de UTEC como <strong>tutora académica, voluntaria y referente del Programa de Lenguas</strong>.</p>
+      <p>Me motiva <strong>resolver problemas reales</strong> usando tecnología y acompañar a otros en su proceso de aprendizaje.</p>
 
       <div class="about-data">
         <div class="data-row">
@@ -626,18 +510,61 @@
           <span class="data-val">Intermedia — 4.° semestre</span>
         </div>
         <div class="data-row">
-          <span class="data-label">Áreas de dominio</span>
-          <span class="data-val">4 competencias profesionales</span>
+          <span class="data-label">Inglés</span>
+          <span class="data-val">B2/C1 — LinguaSkill (Cambridge)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Tutora académica</span>
+          <span class="data-val">Ingresantes 1.° semestre IMEC</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- LOGROS Y CERTIFICACIONES -->
+<section id="logros">
+  <div class="section-header fade-up">
+    <span class="section-num">02</span>
+    <div>
+      <h2 class="section-title">Certificaciones y logros</h2>
+      <p class="section-subtitle">Reconocimientos, certificados y actividades extracurriculares que complementan mi formación técnica.</p>
+    </div>
+  </div>
+
+  <div class="logros-grid fade-up">
+
+    <div class="logro-card">
+      <span class="logro-icon">🌐</span>
+      <div class="logro-tipo">Idiomas · Cambridge</div>
+      <h3 class="logro-title">Inglés B2/C1 — LinguaSkill</h3>
+      <p class="logro-desc">Certificación de nivel B2/C1 en inglés académico y técnico, emitida por Cambridge Assessment English a través del Programa de Lenguas de UTEC.</p>
+      <span class="logro-badge blue">Certificado Cambridge</span>
+    </div>
+
+    <div class="logro-card">
+      <span class="logro-icon">🔥</span>
+      <div class="logro-tipo">Habilidades técnicas · UTEC</div>
+      <h3 class="logro-title">Curso de Soldadura</h3>
+      <p class="logro-desc">Formación en técnicas de soldadura dictada en UTEC, con enfoque en fabricación y unión de componentes metálicos bajo normas de seguridad e higiene laboral.</p>
+      <span class="logro-badge warm">Certificado UTEC</span>
+    </div>
+
+    <div class="logro-card">
+      <span class="logro-icon">🎓</span>
+      <div class="logro-tipo">Tutorías · UTEC IMEC</div>
+      <h3 class="logro-title">Tutora académica — 1.° semestre</h3>
+      <p class="logro-desc">Orientación a estudiantes ingresantes de Ingeniería en Mecatrónica, facilitando su transición a la vida universitaria, apoyo en asignaturas y acompañamiento en la adaptación al contexto UTEC.</p>
+      <span class="logro-badge">En curso · 2025</span>
+    </div>
+
+  </div>
+</section>
+
 <!-- COMPETENCIAS PROFESIONALES -->
 <section id="competencias">
   <div class="section-header fade-up">
-    <span class="section-num">02</span>
+    <span class="section-num">03</span>
     <div>
       <h2 class="section-title">Competencias profesionales</h2>
       <p class="section-subtitle">Las cuatro áreas de dominio del perfil de egreso del Tecnólogo en Mecatrónica, según el Plan IMEC 2023 de UTEC.</p>
@@ -658,15 +585,24 @@
         <div>
           <div class="comp-section-label">Evidencias</div>
           <ul class="evidencia-list">
-            <li><span class="ev-mark"></span>Laboratorios de Electrónica Analógica Aplicada — análisis de circuitos amplificadores y filtros</li>
+            <li><span class="ev-mark"></span>Laboratorios de Electrónica Analógica Aplicada — análisis de circuitos amplificadores y filtros activos</li>
             <li><span class="ev-mark"></span>Laboratorios de Aplicaciones Electro Industriales — instalaciones y conexiones industriales</li>
-            <li><span class="ev-mark"></span>Informe de Tecnologías de Microprocesamiento — implementación de firmware en microcontroladores</li>
+            <li><span class="ev-mark"></span>Laboratorios de Tecnologías de Microprocesamiento — implementación de firmware en microcontroladores</li>
+            <li><span class="ev-mark"></span>Proyecto Integrador de Competencias 1 — puesta en operación de sistema electrónico integrado</li>
+            <li><span class="ev-mark"></span>Práctica Profesional Curricular (PPC) — relevamiento de operación en contexto industrial real</li>
           </ul>
         </div>
         <div>
           <div class="comp-section-label">Reflexión</div>
-          <p class="comp-reflexion">Cada laboratorio me permitió poner en práctica los conocimientos teóricos, aprendiendo a identificar fallas y seguir procedimientos para garantizar el funcionamiento correcto de los sistemas.</p>
+          <p class="comp-reflexion">Cada laboratorio me permitió poner en práctica los conocimientos teóricos, aprendiendo a identificar fallas y seguir procedimientos para garantizar el funcionamiento correcto de los sistemas. La PPC amplió esta perspectiva al contexto industrial real.</p>
         </div>
+      </div>
+      <div class="drive-link-row">
+        <span class="drive-link-label">Evidencias en Drive</span>
+        <a class="drive-btn" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Ver PDFs en Google Drive ↗
+        </a>
       </div>
     </div>
 
@@ -684,13 +620,22 @@
           <ul class="evidencia-list">
             <li><span class="ev-mark"></span>Laboratorios de Electrónica Digital 1 — diagnóstico y verificación de circuitos lógicos</li>
             <li><span class="ev-mark"></span>Prácticas con equipos de medición — osciloscopio, multímetro, generador de señales</li>
-            <li><span class="ev-mark"></span>Seguimiento y documentación de sistemas automatizados</li>
+            <li><span class="ev-mark"></span>Laboratorios de Electrónica Analógica — identificación y corrección de fallas en circuitos</li>
+            <li><span class="ev-mark"></span>Práctica Profesional Curricular (PPC) — observación de planes de mantenimiento en industria</li>
+            <li><span class="ev-mark"></span>Seguridad Laboral y Salud Ocupacional — normativa aplicada a contextos de mantenimiento</li>
           </ul>
         </div>
         <div>
           <div class="comp-section-label">Reflexión</div>
-          <p class="comp-reflexion">Aprendí que el mantenimiento no es solo reparar cuando algo falla, sino anticiparse: identificar señales de deterioro y actuar antes de que el sistema falle.</p>
+          <p class="comp-reflexion">Aprendí que el mantenimiento no es solo reparar cuando algo falla, sino anticiparse: identificar señales de deterioro y actuar antes de que el sistema falle. La formación en seguridad laboral reforzó esta mirada preventiva.</p>
         </div>
+      </div>
+      <div class="drive-link-row">
+        <span class="drive-link-label">Evidencias en Drive</span>
+        <a class="drive-btn" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Ver PDFs en Google Drive ↗
+        </a>
       </div>
     </div>
 
@@ -706,15 +651,24 @@
         <div>
           <div class="comp-section-label">Evidencias</div>
           <ul class="evidencia-list">
-            <li><span class="ev-mark"></span>Proyecto Integrador de Competencias 1 — diseño y prototipado de sistema electrónico</li>
-            <li><span class="ev-mark"></span>Proyecto Integrador de Competencias 2 — integración de hardware y software</li>
-            <li><span class="ev-mark"></span>Dibujo Computarizado (CAD) — modelado de componentes mecánicos</li>
+            <li><span class="ev-mark"></span>Proyecto Integrador de Competencias 1 — diseño y prototipado de sistema electrónico integrado</li>
+            <li><span class="ev-mark"></span>Proyecto Integrador de Competencias 2 — integración de hardware y software con microprocesadores</li>
+            <li><span class="ev-mark"></span>Dibujo Computarizado CAD — modelado de componentes y sistemas mecánicos</li>
+            <li><span class="ev-mark"></span>Curso de Soldadura (UTEC) — fabricación y unión de componentes según diseño y normas de seguridad</li>
+            <li><span class="ev-mark"></span>Laboratorios de Tecnologías de Microprocesamiento — diseño de soluciones embebidas con Arduino</li>
           </ul>
         </div>
         <div>
           <div class="comp-section-label">Reflexión</div>
-          <p class="comp-reflexion">Los proyectos integradores fueron el espacio donde pude ver el panorama completo: desde el problema hasta la solución física funcionando, tomando decisiones técnicas reales.</p>
+          <p class="comp-reflexion">Los proyectos integradores fueron el espacio donde pude ver el panorama completo: desde el problema hasta la solución física funcionando. El curso de soldadura agregó la dimensión de fabricación real, cerrando el ciclo del diseño a la construcción.</p>
         </div>
+      </div>
+      <div class="drive-link-row">
+        <span class="drive-link-label">Evidencias en Drive</span>
+        <a class="drive-btn" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Ver PDFs en Google Drive ↗
+        </a>
       </div>
     </div>
 
@@ -730,15 +684,24 @@
         <div>
           <div class="comp-section-label">Evidencias</div>
           <ul class="evidencia-list">
-            <li><span class="ev-mark"></span>Laboratorios de Tecnologías de Microprocesamiento — Arduino y STM32</li>
-            <li><span class="ev-mark"></span>Exploración de sensores y actuadores en prototipos experimentales</li>
-            <li><span class="ev-mark"></span>Práctica Profesional Curricular (PPC) — fase de relevamiento</li>
+            <li><span class="ev-mark"></span>Laboratorios de Tecnologías de Microprocesamiento — prototipado con Arduino, sensores y actuadores</li>
+            <li><span class="ev-mark"></span>Proyecto Integrador de Competencias 2 — integración de tecnologías emergentes en solución práctica</li>
+            <li><span class="ev-mark"></span>Curso de Soldadura (UTEC) — fabricación de prototipos con técnicas de unión industrial</li>
+            <li><span class="ev-mark"></span>Práctica Profesional Curricular (PPC) — identificación de oportunidades de mejora en sistemas industriales</li>
+            <li><span class="ev-mark"></span>Participación en Buddy Program — exploración de contextos y prácticas tecnológicas diversas</li>
           </ul>
         </div>
         <div>
           <div class="comp-section-label">Reflexión</div>
-          <p class="comp-reflexion">La innovación empieza por curiosidad. En cada laboratorio intenté ir más allá de lo requerido: ¿qué pasa si cambio este parámetro? ¿Cómo podría mejorarse este sistema?</p>
+          <p class="comp-reflexion">La innovación empieza por curiosidad. En cada laboratorio intenté ir más allá de lo requerido: ¿qué pasa si cambio este parámetro? ¿Cómo podría mejorarse este sistema? La PPC me mostró cuánto margen existe para proponer mejoras en contextos reales.</p>
         </div>
+      </div>
+      <div class="drive-link-row">
+        <span class="drive-link-label">Evidencias en Drive</span>
+        <a class="drive-btn" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Ver PDFs en Google Drive ↗
+        </a>
       </div>
     </div>
 
@@ -748,63 +711,97 @@
 <!-- COMPETENCIAS TRANSVERSALES -->
 <section id="transversales">
   <div class="section-header fade-up">
-    <span class="section-num">03</span>
+    <span class="section-num">04</span>
     <div>
       <h2 class="section-title">Competencias transversales</h2>
-      <p class="section-subtitle">Las cuatro competencias clave definidas por UTEC para la formación integral del estudiante de Mecatrónica.</p>
+      <p class="section-subtitle">Las cuatro competencias clave definidas por UTEC, evidenciadas a través de actividades académicas, institucionales y de voluntariado.</p>
     </div>
   </div>
 
   <div class="trans-grid fade-up">
+
+    <!-- COMUNICACIÓN -->
     <div class="trans-card">
       <div class="trans-header">
         <div class="trans-icon">💬</div>
         <h3 class="trans-title">Comunicación</h3>
       </div>
-      <p class="trans-desc">Capacidad de transmitir ideas técnicas con claridad, tanto en forma oral, escrita como multimedial, adaptándome a distintos interlocutores.</p>
-      <div class="trans-evidence">Informes técnicos · Presentaciones · PIC 1 y 2</div>
-      <p class="trans-reflexion">Redactar informes y presentar proyectos me enseñó que comunicar bien es tan importante como hacer bien. Aprendí a estructurar ideas complejas de forma clara.</p>
+      <p class="trans-desc">Capacidad de transmitir ideas técnicas y académicas con claridad, en forma oral, escrita y multimedial, adaptándome a distintos interlocutores y contextos.</p>
+      <ul class="trans-evidence-list">
+        <li><span class="trans-ev-dot"></span>Informes técnicos de laboratorio (Electrónica Analógica, Digital, Microcontroladores)</li>
+        <li><span class="trans-ev-dot"></span>Presentaciones en PIC 1 y PIC 2</li>
+        <li><span class="trans-ev-dot"></span>Informe de Voluntariado al Congreso (UTEC)</li>
+        <li><span class="trans-ev-dot"></span>Tutorías académicas — explicación de conceptos a ingresantes</li>
+        <li><span class="trans-ev-dot"></span>Inglés B2/C1 LinguaSkill (Cambridge) — comunicación técnica en inglés</li>
+        <li><span class="trans-ev-dot"></span>Cursos EDU: Gestión del tiempo y Técnicas de estudio</li>
+      </ul>
+      <p class="trans-reflexion">Redactar informes, presentar proyectos y explicar conceptos a ingresantes me enseñó que comunicar bien es tan importante como hacer bien. Cada contexto exige un registro distinto.</p>
     </div>
 
+    <!-- TRABAJO EN EQUIPO -->
     <div class="trans-card">
       <div class="trans-header">
         <div class="trans-icon">🤝</div>
         <h3 class="trans-title">Trabajo en equipo</h3>
       </div>
-      <p class="trans-desc">Colaboración activa en grupos multidisciplinarios, fomentando la responsabilidad colectiva y la integración de diferentes perspectivas.</p>
-      <div class="trans-evidence">PICs · Laboratorios grupales · Proyectos finales</div>
-      <p class="trans-reflexion">Trabajar con personas de distintos perfiles me hizo entender que los mejores resultados emergen cuando cada integrante aporta desde sus fortalezas.</p>
+      <p class="trans-desc">Colaboración activa en grupos multidisciplinarios, fomentando la responsabilidad colectiva y la integración de diferentes perspectivas y habilidades.</p>
+      <ul class="trans-evidence-list">
+        <li><span class="trans-ev-dot"></span>PIC 1 y PIC 2 — trabajo en equipo interdisciplinario</li>
+        <li><span class="trans-ev-dot"></span>Laboratorios grupales de Electrónica y Microcontroladores</li>
+        <li><span class="trans-ev-dot"></span>Buddy Program — acompañamiento a estudiantes internacionales</li>
+        <li><span class="trans-ev-dot"></span>Voluntariado al Congreso UTEC — organización y trabajo conjunto</li>
+        <li><span class="trans-ev-dot"></span>Voluntariado Programa de Lenguas UTEC (ref. Rossana Mantaras)</li>
+        <li><span class="trans-ev-dot"></span>Tutorías académicas — coordinación con equipo docente</li>
+      </ul>
+      <p class="trans-reflexion">Trabajar con personas de distintos perfiles me hizo entender que los mejores resultados emergen cuando cada integrante aporta desde sus fortalezas, y alguien se ocupa de integrar las piezas.</p>
     </div>
 
+    <!-- AUTORREGULACIÓN -->
     <div class="trans-card">
       <div class="trans-header">
         <div class="trans-icon">🧠</div>
         <h3 class="trans-title">Autorregulación del aprendizaje</h3>
       </div>
-      <p class="trans-desc">Gestión autónoma del proceso de estudio, identificando fortalezas y áreas de mejora para ajustar estrategias de aprendizaje.</p>
-      <div class="trans-evidence">Horas autónomas · Estudio independiente · Feedback docente</div>
-      <p class="trans-reflexion">Aprender a estudiar es un proceso en sí mismo. Identificar cuándo necesito repasar, pedir ayuda o cambiar de estrategia fue una de las competencias más valiosas que desarrollé.</p>
+      <p class="trans-desc">Gestión autónoma del proceso de estudio, identificando fortalezas y áreas de mejora, ajustando estrategias según los contextos académicos y profesionales.</p>
+      <ul class="trans-evidence-list">
+        <li><span class="trans-ev-dot"></span>Curso EDU: Gestión del tiempo (UTEC)</li>
+        <li><span class="trans-ev-dot"></span>Curso EDU: Técnicas de estudio (UTEC)</li>
+        <li><span class="trans-ev-dot"></span>Certificación LinguaSkill — proceso autónomo de preparación</li>
+        <li><span class="trans-ev-dot"></span>Tutorías académicas — reflexión sobre los propios procesos de aprendizaje</li>
+        <li><span class="trans-ev-dot"></span>Horas autónomas de estudio y laboratorios documentados</li>
+        <li><span class="trans-ev-dot"></span>Buddy Program — adaptación a dinámicas de colaboración intercultural</li>
+      </ul>
+      <p class="trans-reflexion">Aprender a estudiar es un proceso en sí mismo. Identificar cuándo necesito repasar, pedir ayuda o cambiar de estrategia fue una de las competencias más valiosas que desarrollé. Tutorear a otros me obligó a reflexionar sobre cómo aprendo yo misma.</p>
     </div>
 
+    <!-- PENSAMIENTO CRÍTICO -->
     <div class="trans-card">
       <div class="trans-header">
         <div class="trans-icon">🔍</div>
         <h3 class="trans-title">Pensamiento crítico</h3>
       </div>
-      <p class="trans-desc">Análisis reflexivo de situaciones problemáticas, evaluando alternativas y tomando decisiones técnicas fundamentadas.</p>
-      <div class="trans-evidence">Resolución de repartidos · Análisis de circuitos · PIC 2</div>
-      <p class="trans-reflexion">Ante cada problema aprendí a no quedarme con la primera solución: preguntar "¿por qué?", evaluar alternativas y fundamentar las decisiones con evidencia técnica.</p>
+      <p class="trans-desc">Análisis reflexivo de situaciones problemáticas, evaluación de alternativas y toma de decisiones técnicas e institucionales fundamentadas en evidencia.</p>
+      <ul class="trans-evidence-list">
+        <li><span class="trans-ev-dot"></span>Resolución de repartidos y problemas de circuitos y control</li>
+        <li><span class="trans-ev-dot"></span>Análisis crítico en laboratorios — comparación teoría vs. medición</li>
+        <li><span class="trans-ev-dot"></span>PIC 2 — evaluación y selección de alternativas técnicas</li>
+        <li><span class="trans-ev-dot"></span>Informe de Voluntariado al Congreso — análisis y síntesis de contenidos académicos</li>
+        <li><span class="trans-ev-dot"></span>Tutorías académicas — diagnóstico de dificultades y diseño de estrategias de apoyo</li>
+        <li><span class="trans-ev-dot"></span>PPC — identificación de mejoras en sistemas industriales existentes</li>
+      </ul>
+      <p class="trans-reflexion">Ante cada problema aprendí a no quedarme con la primera solución: preguntar "¿por qué?", evaluar alternativas y fundamentar las decisiones con evidencia. Las tutorías lo llevaron a otro nivel: diagnosticar la dificultad ajena requiere aún más pensamiento crítico.</p>
     </div>
+
   </div>
 </section>
 
 <!-- PROYECTOS / EVIDENCIAS DESTACADAS -->
 <section id="proyectos">
   <div class="section-header fade-up">
-    <span class="section-num">04</span>
+    <span class="section-num">05</span>
     <div>
       <h2 class="section-title">Evidencias destacadas</h2>
-      <p class="section-subtitle">Selección de trabajos prácticos, laboratorios y proyectos que documentan el desarrollo de competencias a lo largo de la carrera.</p>
+      <p class="section-subtitle">Selección de trabajos prácticos, laboratorios, proyectos y actividades que documentan el desarrollo de competencias a lo largo de la carrera.</p>
     </div>
   </div>
 
@@ -820,42 +817,47 @@
         <span class="tech-tag">Trabajo en equipo</span>
         <span class="tech-tag">Documentación</span>
       </div>
+      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver evidencia en Drive ↗</a>
     </div>
 
     <div class="proj-card">
       <div class="proj-status-dot dot-done"></div>
       <div class="proj-tag">Completado</div>
       <h3 class="proj-title">Proyecto Integrador de Competencias 2</h3>
-      <p class="proj-desc">Integración de hardware y software para resolver una problemática técnica real, aplicando tecnologías de microprocesamiento y electrónica digital.</p>
+      <p class="proj-desc">Integración de hardware y software para resolver una problemática técnica real, aplicando tecnologías de microprocesamiento y electrónica digital en equipo.</p>
       <div class="proj-techs">
         <span class="tech-tag">Microcontroladores</span>
         <span class="tech-tag">Electrónica digital</span>
         <span class="tech-tag">Programación</span>
       </div>
+      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver evidencia en Drive ↗</a>
     </div>
 
     <div class="proj-card">
       <div class="proj-status-dot dot-done"></div>
       <div class="proj-tag">Laboratorio</div>
       <h3 class="proj-title">Laboratorios de Electrónica Analógica</h3>
-      <p class="proj-desc">Serie de laboratorios con amplificadores operacionales, filtros activos y circuitos de acondicionamiento de señal. Documentación con mediciones y análisis.</p>
+      <p class="proj-desc">Serie de laboratorios con amplificadores operacionales, filtros activos y circuitos de acondicionamiento de señal. Documentación completa con mediciones y análisis.</p>
       <div class="proj-techs">
         <span class="tech-tag">Osciloscopio</span>
         <span class="tech-tag">OpAmps</span>
         <span class="tech-tag">SPICE</span>
+        <span class="tech-tag">Filtros activos</span>
       </div>
+      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver evidencia en Drive ↗</a>
     </div>
 
     <div class="proj-card">
       <div class="proj-status-dot dot-done"></div>
       <div class="proj-tag">Laboratorio</div>
       <h3 class="proj-title">Laboratorios de Electrónica Digital</h3>
-      <p class="proj-desc">Implementación de circuitos lógicos combinacionales y secuenciales. Diseño y simulación con compuertas lógicas, flip-flops y contadores.</p>
+      <p class="proj-desc">Implementación de circuitos lógicos combinacionales y secuenciales. Diseño y simulación con compuertas, flip-flops y contadores. Diagnóstico de fallas.</p>
       <div class="proj-techs">
         <span class="tech-tag">Lógica combinacional</span>
         <span class="tech-tag">Flip-flops</span>
         <span class="tech-tag">FPGA</span>
       </div>
+      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver evidencia en Drive ↗</a>
     </div>
 
     <div class="proj-card">
@@ -866,19 +868,59 @@
       <div class="proj-techs">
         <span class="tech-tag">Arduino</span>
         <span class="tech-tag">C/C++</span>
-        <span class="tech-tag">UART</span>
-        <span class="tech-tag">I2C</span>
+        <span class="tech-tag">UART · I2C</span>
+        <span class="tech-tag">Sensores</span>
       </div>
+      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver evidencia en Drive ↗</a>
     </div>
 
     <div class="proj-card">
       <div class="proj-status-dot dot-wip"></div>
       <div class="proj-tag">En proceso</div>
       <h3 class="proj-title">Práctica Profesional Curricular</h3>
-      <p class="proj-desc">Práctica profesional en empresa del sector industrial. Actualmente en fase de relevamiento inicial, con foco en operación y mantenimiento de sistemas automatizados.</p>
+      <p class="proj-desc">Inserción en empresa del sector industrial. Actualmente en fase de relevamiento inicial, con foco en operación y mantenimiento de sistemas automatizados.</p>
       <div class="proj-techs">
         <span class="tech-tag">Industria real</span>
         <span class="tech-tag">Relevamiento</span>
+        <span class="tech-tag">Automatización</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-status-dot dot-done"></div>
+      <div class="proj-tag">Certificado · UTEC</div>
+      <h3 class="proj-title">Curso de Soldadura</h3>
+      <p class="proj-desc">Formación en técnicas de soldadura con enfoque en fabricación de componentes metálicos, normas de seguridad y calidad en el proceso de unión.</p>
+      <div class="proj-techs">
+        <span class="tech-tag">Soldadura</span>
+        <span class="tech-tag">Seguridad laboral</span>
+        <span class="tech-tag">Fabricación</span>
+      </div>
+      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver certificado en Drive ↗</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-status-dot dot-done"></div>
+      <div class="proj-tag">Voluntariado · UTEC</div>
+      <h3 class="proj-title">Voluntariado — Congreso UTEC</h3>
+      <p class="proj-desc">Participación activa en organización y desarrollo de Congreso académico de UTEC. Informe de voluntariado como evidencia formal de competencias transversales.</p>
+      <div class="proj-techs">
+        <span class="tech-tag">Comunicación</span>
+        <span class="tech-tag">Trabajo en equipo</span>
+        <span class="tech-tag">Organización</span>
+      </div>
+      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver informe en Drive ↗</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-status-dot dot-done"></div>
+      <div class="proj-tag">Tutorías · 2025</div>
+      <h3 class="proj-title">Tutora académica — Ingresantes IMEC</h3>
+      <p class="proj-desc">Orientación a estudiantes de primer semestre de Ingeniería en Mecatrónica, facilitando su transición a la vida universitaria y apoyando en contenidos técnicos.</p>
+      <div class="proj-techs">
+        <span class="tech-tag">Liderazgo</span>
+        <span class="tech-tag">Comunicación</span>
+        <span class="tech-tag">Pensamiento crítico</span>
       </div>
     </div>
 
@@ -888,7 +930,7 @@
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="section-header fade-up">
-    <span class="section-num">05</span>
+    <span class="section-num">06</span>
     <div>
       <h2 class="section-title">Contacto</h2>
       <p class="section-subtitle">Este portfolio es una evidencia en construcción de mi proceso de aprendizaje. Si sos docente evaluador o querés saber más, aquí mis datos de contacto.</p>
@@ -902,20 +944,22 @@
         <span class="contact-link-val">sofia.modernell@utec.edu.uy</span>
         <span class="contact-link-arrow">↗</span>
       </a>
+      <a href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank" class="contact-link">
+        <span class="contact-link-label">Evidencias</span>
+        <span class="contact-link-val">Google Drive — PDFs y materiales</span>
+        <span class="contact-link-arrow">↗</span>
+      </a>
       <div class="contact-link">
         <span class="contact-link-label">Carrera</span>
-        <span class="contact-link-val">Ingeniería en Mecatrónica · UTEC</span>
-        <span class="contact-link-arrow"></span>
+        <span class="contact-link-val">Ingeniería en Mecatrónica · UTEC · Plan IMEC 2023</span>
       </div>
       <div class="contact-link">
         <span class="contact-link-label">Semestre</span>
-        <span class="contact-link-val">5.° semestre · Plan 2023</span>
-        <span class="contact-link-arrow"></span>
+        <span class="contact-link-val">5.° semestre — Evaluación intermedia 2025</span>
       </div>
       <div class="contact-link">
-        <span class="contact-link-label">Evaluación</span>
-        <span class="contact-link-val">Portfolio intermedio — 2025</span>
-        <span class="contact-link-arrow"></span>
+        <span class="contact-link-label">Ref. académica</span>
+        <span class="contact-link-val">Rossana Mantaras — Programa de Lenguas UTEC</span>
       </div>
     </div>
   </div>
