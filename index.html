@@ -399,7 +399,9 @@
     transition: background 0.2s; position: relative;
   }
   .proj-card:nth-child(3n) { border-right: none; }
-  .proj-card:nth-child(4), .proj-card:nth-child(5), .proj-card:nth-child(6) { border-bottom: none; }
+  .proj-card:nth-last-child(-n+3):nth-child(3n+1),
+  .proj-card:nth-last-child(-n+2):nth-child(3n+2),
+  .proj-card:last-child { border-bottom: none; }
   .proj-card:hover { background: var(--surface-alt); }
   .proj-status-dot {
     position: absolute; top: 1.5rem; right: 1.5rem;
@@ -581,7 +583,7 @@
         </div>
         <div class="data-row">
           <span class="data-label">Inglés</span>
-          <span class="data-val">B2/C1 — LinguaSkill </span>
+          <span class="data-val">B2/C1 — <a href="LINK_CERTIFICADO_LINGUASKILL" target="_blank" style="color:var(--accent-warm);text-decoration:none;border-bottom:1px solid var(--accent-warm);">LinguaSkill ↗</a></span>
         </div>
       </div>
     </div>
@@ -608,6 +610,12 @@
       <h3 class="logro-title">Inglés B2/C1 — LinguaSkill</h3>
       <p class="logro-desc">Certificación de nivel B2/C1 en inglés académico y técnico, emitida por Cambridge Assessment English a través del Programa de Lenguas de UTEC (2023).</p>
       <span class="logro-badge blue">Certificado Cambridge</span>
+      <div style="margin-top:0.85rem;">
+        <a class="drive-btn" href="LINK_CERTIFICADO_LINGUASKILL" target="_blank" style="font-size:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px;opacity:0.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Ver certificado ↗
+        </a>
+      </div>
     </div>
 
     <div class="logro-card">
@@ -618,6 +626,12 @@
       <h3 class="logro-title">Curso de Soldadura</h3>
       <p class="logro-desc">Formación en difernetes técnicas de soldadura dictada en UTEC (2022), con enfoque en fabricación y unión de componentes metálicos bajo normas de seguridad e higiene laboral.</p>
       <span class="logro-badge warm">Certificado UTEC</span>
+      <div style="margin-top:0.85rem;">
+        <a class="drive-btn" href="LINK_FOTO_CERTIFICADO_SOLDADURA" target="_blank" style="font-size:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px;opacity:0.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Ver foto del certificado ↗
+        </a>
+      </div>
     </div>
 
     <div class="logro-card">
@@ -628,6 +642,128 @@
       <h3 class="logro-title">Tutora académica — 1° semestre</h3>
       <p class="logro-desc">Orientación a estudiantes ingresantes de Ingeniería en Mecatrónica, facilitando su transición a la vida universitaria, apoyo técnico y acompañamiento en la adaptación al contexto UTEC.</p>
       <span class="logro-badge">En curso · 2026</span>
+    </div>
+
+    <!-- SEGURIDAD / ITR -->
+    <div class="logro-card">
+      <span class="logro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </span>
+      <div class="logro-tipo">Seguridad · ITR</div>
+      <h3 class="logro-title">Jornada de Actuación ante Emergencias y Evacuación</h3>
+      <p class="logro-desc">Capacitación de 4 hs (2025): procedimiento de evacuación del ITR, teoría del fuego y métodos de extinción, uso y manejo de equipos portátiles de extinción de fuego.</p>
+      <span class="logro-badge warm">Certificado · 2025</span>
+      <div style="margin-top:0.85rem;">
+        <a class="drive-btn" href="LINK_CERTIFICADO_EMERGENCIAS_ITR" target="_blank" style="font-size:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px;opacity:0.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Ver certificado ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- INGLÉS — CURSOS PRESENCIALES -->
+    <div class="logro-card">
+      <span class="logro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </span>
+      <div class="logro-tipo">Idiomas · Presencial · Prog. Lenguas UTEC</div>
+      <h3 class="logro-title">Play Your Way to Fluency</h3>
+      <p class="logro-desc">Cursos presenciales de inglés con metodología lúdica dictados en UTEC (2022 y 2023). Trabajo final grupal: juego de mesa en inglés diseñado y creado en equipo.</p>
+      <span class="logro-badge blue">2022 · 2023</span>
+    </div>
+
+    <!-- INGLÉS — CURSOS EDU -->
+    <div class="logro-card">
+      <span class="logro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </span>
+      <div class="logro-tipo">Idiomas · EDU autogestionado</div>
+      <h3 class="logro-title">Cursos EDU de Inglés</h3>
+      <p class="logro-desc">English for Business and Negotiation (2023, autogestionado) y English for Active Listening (2022), ambos a través de la plataforma EDU.</p>
+      <span class="logro-badge blue">EDU · 2022–2023</span>
+    </div>
+
+    <!-- CORTE LÁSER -->
+    <div class="logro-card">
+      <span class="logro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><circle cx="12" cy="12" r="3"/><line x1="3" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="21"/></svg>
+      </span>
+      <div class="logro-tipo">Fabricación Digital · EDU</div>
+      <h3 class="logro-title">Introducción al Corte Láser</h3>
+      <p class="logro-desc">Curso EDU de introducción al corte láser. Trabajo final: mariposa autómata (2024), diseñada y fabricada en el marco del curso.</p>
+      <span class="logro-badge warm">EDU · 2024</span>
+      <div style="margin-top:0.85rem;">
+        <a class="drive-btn" href="LINK_PORTFOLIO_MARIPOSA_AUTOMATA" target="_blank" style="font-size:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px;opacity:0.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Ver trabajo final — mariposa autómata ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- FÍSICA — CURSOS EDU -->
+    <div class="logro-card">
+      <span class="logro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
+      </span>
+      <div class="logro-tipo">Física · EDU</div>
+      <h3 class="logro-title">Cursos EDU de Física</h3>
+      <p class="logro-desc">Magnitudes Físicas, Cinemática 2D y Dinámica, cursados a través de la plataforma EDU como complemento a la formación en Física de la carrera.</p>
+      <span class="logro-badge">EDU</span>
+    </div>
+
+    <!-- ARDUINO FOR CREATIVE COLLABORATION -->
+    <div class="logro-card">
+      <span class="logro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </span>
+      <div class="logro-tipo">Jornadas · 2022</div>
+      <h3 class="logro-title">Arduino for Creative Collaboration</h3>
+      <p class="logro-desc">Participación en jornadas Arduino for Creative Collaboration (2022), con foco en proyectos creativos y colaborativos usando plataformas de hardware libre.</p>
+      <span class="logro-badge">2022</span>
+    </div>
+
+    <!-- NORMAS APA -->
+    <div class="logro-card">
+      <span class="logro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </span>
+      <div class="logro-tipo">Escritura Académica · EDU</div>
+      <h3 class="logro-title">Las Normas APA como Marco de Referencia</h3>
+      <p class="logro-desc">Curso EDU del Programa de Lenguas UTEC sobre uso de normas APA como estándar de referencia y citación en trabajos académicos.</p>
+      <span class="logro-badge">Prog. Lenguas · EDU</span>
+    </div>
+
+    <!-- BRICKS AND BITS -->
+    <div class="logro-card">
+      <span class="logro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </span>
+      <div class="logro-tipo">Facilitadora · 2022</div>
+      <h3 class="logro-title">Bricks &amp; Bits — Food Edition</h3>
+      <p class="logro-desc">Facilitadora en Bricks and Bits Food Edition (Paysandú, 2022), evento de innovación y tecnología con dinámica de construcción colaborativa.</p>
+      <span class="logro-badge warm">Facilitadora · 2022</span>
+    </div>
+
+    <!-- ENGLISH IMMERSION CAMP -->
+    <div class="logro-card">
+      <span class="logro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </span>
+      <div class="logro-tipo">Idiomas · Inmersión · 2023</div>
+      <h3 class="logro-title">English Immersion Camp</h3>
+      <p class="logro-desc">Participación en English Immersion Camp 2023 — American Short Stories, actividad de inmersión en inglés en el marco del Programa de Lenguas UTEC.</p>
+      <span class="logro-badge blue">2023</span>
+    </div>
+
+    <!-- SEMANA DE LA INNOVACIÓN UTEC -->
+    <div class="logro-card">
+      <span class="logro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </span>
+      <div class="logro-tipo">Innovación · UTEC · 2023</div>
+      <h3 class="logro-title">6.ª Semana de la Innovación UTEC</h3>
+      <p class="logro-desc">Participación en la Sexta Semana de la Innovación UTEC (2023), espacio de encuentro, presentación de proyectos y networking entre estudiantes, docentes y empresas del sector tecnológico.</p>
+      <span class="logro-badge">UTEC · 2023</span>
     </div>
 
   </div>
@@ -995,12 +1131,8 @@
         <span class="tech-tag">Seguridad laboral</span>
         <span class="tech-tag">Fabricación</span>
       </div>
-      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver certificado en Drive ↗</a>
+      <a class="proj-drive-link" href="LINK_FOTO_CERTIFICADO_SOLDADURA" target="_blank">Ver foto del certificado ↗</a>
     </div>
-
-    <div class="proj-card">
-      <div class="proj-status-dot dot-done"></div>
-      <div class="proj-tag">Voluntariado · UTEC</div>
       <h3 class="proj-title">Voluntariado — Congreso UTEC</h3>
       <p class="proj-desc">Participación activa en organización y desarrollo de Congreso académico de UTEC. Informe de voluntariado como evidencia formal de competencias transversales.</p>
       <div class="proj-techs">
@@ -1013,14 +1145,15 @@
 
     <div class="proj-card">
       <div class="proj-status-dot dot-done"></div>
-      <div class="proj-tag">Tutorías · 2025</div>
-      <h3 class="proj-title">Tutora académica — Ingresantes IMEC</h3>
-      <p class="proj-desc">Orientación a estudiantes de primer semestre de Ingeniería en Mecatrónica, facilitando su transición a la vida universitaria y apoyando en contenidos técnicos.</p>
+      <div class="proj-tag">Fabricación Digital · EDU</div>
+      <h3 class="proj-title">Mariposa Autómata</h3>
+      <p class="proj-desc">Trabajo final del curso EDU de Introducción al Corte Láser. Diseño y fabricación de mariposa autómata con mecanismo de movimiento, usando corte láser (2024).</p>
       <div class="proj-techs">
-        <span class="tech-tag">Liderazgo</span>
-        <span class="tech-tag">Comunicación</span>
-        <span class="tech-tag">Pensamiento crítico</span>
+        <span class="tech-tag">Corte Láser</span>
+        <span class="tech-tag">Diseño 2D</span>
+        <span class="tech-tag">Fabricación Digital</span>
       </div>
+      <a class="proj-drive-link" href="LINK_PORTFOLIO_MARIPOSA_AUTOMATA" target="_blank">Ver trabajo final ↗</a>
     </div>
 
   </div>
@@ -1054,7 +1187,7 @@
       </div>
       <div class="contact-link">
         <span class="contact-link-label">Semestre</span>
-        <span class="contact-link-val">5.° semestre — Evaluación intermedia 2025</span>
+        <span class="contact-link-val">5° semestre</span>
       </div>
       <div class="contact-link">
         <span class="contact-link-label">Ref. académica</span>
@@ -1066,7 +1199,7 @@
 
 <footer>
   <span class="footer-left">Sofía Carolina Modernell Peñaloza</span>
-  <span class="footer-right">UTEC · IMEC · Portfolio 2025</span>
+  <span class="footer-right">UTEC · IMEC · Portfolio 2026</span>
 </footer>
 
 <script>
