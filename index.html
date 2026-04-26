@@ -143,14 +143,64 @@
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     padding: 8rem 3rem 5rem;
     border-bottom: 1px solid var(--border);
     position: relative;
     background:
       radial-gradient(ellipse 60% 40% at 80% 20%, rgba(196,149,106,0.06) 0%, transparent 70%),
       var(--bg);
+    overflow: hidden; /* Importante para que el gráfico no se salga */
   }
+
+
+/* Gráfico Ingenieril de fondo a la derecha */
+.hero-engineering-graphic {
+  position: absolute;
+  top: 15%;
+  right: -5%;
+  width: 50%;
+  height: 70%;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tech-grid {
+  stroke: var(--border);
+  stroke-width: 0.5;
+}
+
+.tech-line {
+  stroke: var(--accent-warm);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  animation: dash 20s linear infinite;
+}
+
+.tech-circle {
+  fill: none;
+  stroke: var(--accent-warm);
+  stroke-width: 0.5;
+  opacity: 0.5;
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: 100; }
+}
+
+/* Ajuste para que el texto quede por encima */
+.hero > *:not(.hero-engineering-graphic) {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .hero-engineering-graphic { display: none; }
+}
+  
   /* subtle corner ornament — hidden when photo is present */
   .hero::before {
     content: '';
@@ -683,6 +733,22 @@
 
 <!-- HERO -->
 <section class="hero" id="inicio">
+  <div class="hero-engineering-graphic fade-up">
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <path class="tech-grid" d="M0 100 L500 100 M0 200 L500 200 M0 300 L500 300 M0 400 L500 400 M100 0 L100 500 M200 0 L200 500 M300 0 L300 500 M400 0 L400 500" />
+      
+      <circle class="tech-circle" cx="350" cy="250" r="120" />
+      <circle class="tech-circle" cx="350" cy="250" r="100" stroke-dasharray="10 5" />
+      <circle class="tech-circle" cx="350" cy="250" r="40" />
+      
+      <line class="tech-line" x1="100" y1="250" x2="350" y2="250" />
+      <line class="tech-line" x1="350" y1="50" x2="350" y2="450" />
+      
+      <rect x="347" y="247" width="6" height="6" fill="var(--accent-warm)" />
+      <text x="365" y="145" font-family="var(--font-mono)" font-size="8" fill="var(--text-muted)">R_MAX: 120mm</text>
+      <text x="365" y="240" font-family="var(--font-mono)" font-size="8" fill="var(--text-muted)">AXIS_X_01</text>
+    </svg>
+  </div>
   <div class="hero-ornament fade-up">
     <span class="hero-orn-line"></span>
     <span class="hero-orn-diamond"></span>
