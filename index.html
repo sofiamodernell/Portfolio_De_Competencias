@@ -51,7 +51,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.1rem 3rem;
-    background: rgba(250,249,247,0.92);
+    background: rgba(250,249,247,0.96);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-soft);
   }
@@ -67,13 +67,78 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
   .nav-links a {
     font-size: 13px; font-weight: 400;
     color: var(--text-mid); text-decoration: none;
     letter-spacing: 0.03em; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--text); }
+
+  /* ── MEGA-MENU (Competencias) ── */
+  .nav-mega { position: relative; }
+  .nav-mega > a {
+    display: flex; align-items: center; gap: 5px;
+    cursor: pointer;
+  }
+  .nav-mega > a::after {
+    content: '';
+    display: inline-block;
+    width: 5px; height: 5px;
+    border-right: 1.5px solid var(--text-muted);
+    border-bottom: 1.5px solid var(--text-muted);
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 0.2s;
+  }
+  .nav-mega:hover > a::after { transform: rotate(-135deg) translateY(-2px); }
+  .mega-dropdown {
+    position: absolute; top: calc(100% + 1.1rem); left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    width: 560px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 48px rgba(26,25,22,0.10);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .nav-mega:hover .mega-dropdown {
+    opacity: 1; pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+  }
+  .mega-col { padding: 0; }
+  .mega-col-header {
+    font-family: var(--font-mono); font-size: 9px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 14px 20px 10px;
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--surface-alt);
+  }
+  .mega-col:first-child { border-right: 1px solid var(--border); }
+  .mega-item {
+    display: flex; flex-direction: column;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-soft);
+    text-decoration: none; color: inherit;
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .mega-item:last-child { border-bottom: none; }
+  .mega-item:hover { background: var(--surface-alt); }
+  .mega-item-num {
+    font-family: var(--font-mono); font-size: 9px;
+    letter-spacing: 0.1em; color: var(--accent-warm);
+    margin-bottom: 2px;
+  }
+  .mega-item-title {
+    font-family: var(--font-display); font-size: 0.95rem;
+    font-weight: 400; color: var(--text); line-height: 1.25;
+  }
+  .mega-item-sub {
+    font-size: 11px; color: var(--text-muted);
+    margin-top: 2px; line-height: 1.4;
+  }
 
   /* ── HERO ── */
   .hero {
@@ -502,7 +567,20 @@
   .contact-link-val { color: var(--text-mid); font-size: 14px; }
   .contact-link-arrow { color: var(--text-muted); font-size: 12px; margin-left: auto; }
 
-  /* ── FOOTER ── */
+  /* ── PROYECTOS 2-col override ── */
+  .proj-grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .proj-grid-2col .proj-card:nth-child(2n) { border-right: none; }
+  .proj-grid-2col .proj-card:nth-child(3),
+  .proj-grid-2col .proj-card:nth-child(4) { border-bottom: none; }
+  .proj-grid-2col .proj-card:nth-child(3n) { border-right: 1px solid var(--border); }
+  .proj-card-featured { min-height: 220px; }
+  @media (max-width: 768px) {
+    .proj-grid-2col { grid-template-columns: 1fr; }
+    .proj-grid-2col .proj-card { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+    .proj-grid-2col .proj-card:last-child { border-bottom: none !important; }
+  }
   footer {
     padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; background: var(--bg);
   }
@@ -542,12 +620,61 @@
 <body>
 
 <nav>
-  <div class="nav-logo">Sofía Carolina Modernell Peñaloza· UTEC IMEC</div>
+  <div class="nav-logo">Sofía Carolina Modernell Peñaloza · UTEC IMEC</div>
   <ul class="nav-links">
     <li><a href="#inicio">Inicio</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
-    <li><a href="#competencias">Competencias Profesionales</a></li>
-    <li><a href="#transversales">Competencias Transversales</a></li>
+    <li class="nav-mega">
+      <a href="#competencias">Competencias</a>
+      <div class="mega-dropdown">
+        <div class="mega-col">
+          <div class="mega-col-header">Profesionales</div>
+          <a class="mega-item" href="#competencias">
+            <span class="mega-item-num">Área 01</span>
+            <span class="mega-item-title">Operación</span>
+            <span class="mega-item-sub">Sistemas mecatrónicos industriales</span>
+          </a>
+          <a class="mega-item" href="#competencias">
+            <span class="mega-item-num">Área 02</span>
+            <span class="mega-item-title">Mantenimiento</span>
+            <span class="mega-item-sub">Diagnóstico y corrección de fallas</span>
+          </a>
+          <a class="mega-item" href="#competencias">
+            <span class="mega-item-num">Área 03</span>
+            <span class="mega-item-title">Diseño</span>
+            <span class="mega-item-sub">Fabricación según especificaciones</span>
+          </a>
+          <a class="mega-item" href="#competencias">
+            <span class="mega-item-num">Área 04</span>
+            <span class="mega-item-title">Innovación</span>
+            <span class="mega-item-sub">Investigación y nuevas tecnologías</span>
+          </a>
+        </div>
+        <div class="mega-col">
+          <div class="mega-col-header">Transversales</div>
+          <a class="mega-item" href="#transversales">
+            <span class="mega-item-num">CT · 01</span>
+            <span class="mega-item-title">Comunicación</span>
+            <span class="mega-item-sub">Oral, escrita y técnica</span>
+          </a>
+          <a class="mega-item" href="#transversales">
+            <span class="mega-item-num">CT · 02</span>
+            <span class="mega-item-title">Trabajo en equipo</span>
+            <span class="mega-item-sub">Colaboración multidisciplinaria</span>
+          </a>
+          <a class="mega-item" href="#transversales">
+            <span class="mega-item-num">CT · 03</span>
+            <span class="mega-item-title">Autorregulación</span>
+            <span class="mega-item-sub">Gestión autónoma del aprendizaje</span>
+          </a>
+          <a class="mega-item" href="#transversales">
+            <span class="mega-item-num">CT · 04</span>
+            <span class="mega-item-title">Pensamiento crítico</span>
+            <span class="mega-item-sub">Análisis y toma de decisiones</span>
+          </a>
+        </div>
+      </div>
+    </li>
     <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#logros">Logros</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -795,10 +922,13 @@
       <p class="trans-desc">Capacidad de transmitir ideas técnicas y académicas con claridad, en forma oral, escrita y multimedial, adaptándome a distintos interlocutores, formatos y contextos.</p>
       <ul class="trans-evidence-list">
         <li><span class="trans-ev-dot"></span>Informes técnicos de laboratorio (EAA, ED1, TMPR) — redacción técnica con análisis de resultados</li>
-        <li><span class="trans-ev-dot"></span>Presentaciones en PIC I y PIC II — comunicación oral de proyectos integradores</li>
-        <li><span class="trans-ev-dot"></span>XV Congreso CTG — redacción de informe en primera persona con estructura académica, narrando actividades con reflexión sobre género en ciencia y tecnología</li>
+        <li><span class="trans-ev-dot"></span>Presentaciones en PIC I y PIC II — comunicación oral de proyectos integradores ante tribunal evaluador</li>
+        <li><span class="trans-ev-dot"></span>XV Congreso CTG — informe académico en primera persona con reflexión sobre género en ciencia y tecnología</li>
         <li><span class="trans-ev-dot"></span>Tutoría académica — explicación de conceptos técnicos a ingresantes, adaptando el registro al interlocutor</li>
-        <li><span class="trans-ev-dot"></span>Inglés B2 — comunicación técnica en inglés certificada</li>
+        <li><span class="trans-ev-dot"></span>Inglés B2 — comunicación técnica en inglés certificada (LinguaSkill · Cambridge)</li>
+        <li><span class="trans-ev-dot"></span>English Immersion Camp 2023 — American Short Stories: comunicación oral sostenida en inglés durante jornadas de inmersión</li>
+        <li><span class="trans-ev-dot"></span>Normas APA (EDU) — escritura académica con estándares de citación internacionales aplicados a informes técnicos</li>
+        <li><span class="trans-ev-dot"></span>Play Your Way to Fluency — diseño y presentación de juego de mesa en inglés orientado a estudiantes de liceo</li>
       </ul>
       <p class="trans-reflexion">El informe del Congreso CTG fue el más distinto a lo que hago habitualmente: no había circuitos ni código, sino una reflexión desde la instrospección, perspectivas de género y trabajo en equipo. Escribirlo con la misma rigurosidad que un informe técnico me hizo darme cuenta de que comunicar bien es una competencia que trasciende el dominio.</p>
       <div style="padding-top: 1rem; border-top: 1px solid var(--border-soft); margin-top: 0.5rem;">
@@ -822,9 +952,13 @@
         <li><span class="trans-ev-dot"></span>PIC I y PIC II — trabajo en equipo con roles definidos en proyectos integradores de competencias</li>
         <li><span class="trans-ev-dot"></span>Laboratorios grupales de EAA, ED1 y TMPR</li>
         <li><span class="trans-ev-dot"></span>Congreso CTG — coordinación con voluntarios de distintos orígenes, distribución de roles en recepción, logística y asistencia a ponentes</li>
-        <li><span class="trans-ev-dot"></span>Buddy Program — acompañamiento a estudiantes internacionales</li>
+        <li><span class="trans-ev-dot"></span>Buddy Program — acompañamiento a estudiantes internacionales, gestión de barreras culturales e idiomáticas</li>
         <li><span class="trans-ev-dot"></span>Voluntariado Programa de Lenguas UTEC (ref. Rossana Mantaras)</li>
-        <li><span class="trans-ev-dot"></span>Tutorías — coordinación con docente guía para adaptación de grupo de primer semestre</li>
+        <li><span class="trans-ev-dot"></span>Tutorías — coordinación con docente guía para adaptación grupal de primer semestre</li>
+        <li><span class="trans-ev-dot"></span>Play Your Way to Fluency — proyecto grupal de diseño de juego de mesa colaborativo</li>
+        <li><span class="trans-ev-dot"></span>Arduino for Creative Collaboration (2022) — proyectos creativos colaborativos con hardware libre</li>
+        <li><span class="trans-ev-dot"></span>6.ª Semana de la Innovación UTEC (2023) — networking y presentación de proyectos interdisciplinarios</li>
+        <li><span class="trans-ev-dot"></span>English Immersion Camp 2023 — trabajo colaborativo en dinámica de grupo intercultural</li>
       </ul>
       <p class="trans-reflexion">El Congreso CTG fue la experiencia de trabajo en equipo más diferente: personas de ciencias sociales, economía, ingeniería y cooperación internacional, todas trabajando para que un evento funcionara. Sin jerarquía técnica, con confianza colectiva construida en un corto periodo.</p>
       <div style="padding-top: 1rem; border-top: 1px solid var(--border-soft); margin-top: 0.5rem;">
@@ -842,9 +976,13 @@
       <p class="trans-desc">Gestión autónoma del proceso de estudio, identificando fortalezas y áreas de mejora, ajustando estrategias según los contextos académicos y profesionales.</p>
       <ul class="trans-evidence-list">
         <li><span class="trans-ev-dot"></span>Congreso CTG — exposición deliberada a ámbitos fuera de la zona de confort (economía, género, cooperación internacional), documentando cómo esos contenidos modificaron la comprensión previa</li>
-        <li><span class="trans-ev-dot"></span>Certificación LinguaSkill — preparación autónoma para evaluación externa</li>
+        <li><span class="trans-ev-dot"></span>Certificación LinguaSkill B2 — preparación autónoma para evaluación externa sin cursado obligatorio</li>
         <li><span class="trans-ev-dot"></span>Tutorías académicas — reflexión sobre los propios procesos de aprendizaje al enseñar a otros</li>
-        <li><span class="trans-ev-dot"></span>Buddy Program — adaptación a dinámicas de colaboración intercultural</li>
+        <li><span class="trans-ev-dot"></span>Buddy Program — adaptación autónoma a dinámicas de colaboración intercultural sin guía preestablecida</li>
+        <li><span class="trans-ev-dot"></span>Curso EDU Introducción al Corte Láser — incorporación de nuevas herramientas digitales por iniciativa propia</li>
+        <li><span class="trans-ev-dot"></span>Normas APA (EDU) — adquisición autónoma de estándares académicos de escritura</li>
+        <li><span class="trans-ev-dot"></span>Jornada de Evacuación y Emergencias (2025) — actualización proactiva en seguridad laboral</li>
+        <li><span class="trans-ev-dot"></span>English Immersion Camp 2023 — gestión del aprendizaje en contexto de inmersión sin apoyo de traducción</li>
       </ul>
       <p class="trans-reflexion">AÑADIR REFLEXION.</p>
       <div style="padding-top: 1rem; border-top: 1px solid var(--border-soft); margin-top: 0.5rem;">
@@ -863,9 +1001,11 @@
       <ul class="trans-evidence-list">
         <li><span class="trans-ev-dot"></span>Congreso CTG — análisis de estadísticas sobre género en ciencia, evaluación de estrategias de ONU Mujeres y UNESCO, reflexión sobre desigualdad estructural</li>
         <li><span class="trans-ev-dot"></span>Labs EAA — comparación sistemática entre valores teóricos, simulados y medidos; búsqueda de causas reales de discrepancias</li>
-        <li><span class="trans-ev-dot"></span>PIC II — evaluación y selección de alternativas técnicas documentada en matriz de decisión</li>
-        <li><span class="trans-ev-dot"></span>Tutorías — diagnóstico de dificultades de aprendizaje y diseño de estrategias de apoyo personalizadas</li>
-        <li><span class="trans-ev-dot"></span>Lab 4 TMPR — diagnóstico de problemas de comunicación en sistemas maestro-esclavo</li>
+        <li><span class="trans-ev-dot"></span>PIC II — evaluación y selección de alternativas técnicas documentada en matriz de decisión (SigFox vs WiFi vs Bluetooth)</li>
+        <li><span class="trans-ev-dot"></span>Tutorías — diagnóstico de dificultades de aprendizaje y diseño de estrategias de apoyo personalizadas por estudiante</li>
+        <li><span class="trans-ev-dot"></span>Lab 4 TMPR — diagnóstico de problemas de comunicación en sistemas maestro-esclavo (SPI/I2C/UART)</li>
+        <li><span class="trans-ev-dot"></span>6.ª Semana de la Innovación UTEC — evaluación crítica de propuestas tecnológicas de distintos equipos y sectores</li>
+        <li><span class="trans-ev-dot"></span>Buddy Program — análisis de barreras culturales e idiomáticas para diseñar estrategias de integración efectivas</li>
       </ul>
       <p class="trans-reflexion">AÑADIR REFLEXION</p>
       <div style="padding-top: 1rem; border-top: 1px solid var(--border-soft); margin-top: 0.5rem;">
@@ -884,14 +1024,15 @@
     </div>
   </div>
 
-  <div class="proj-grid fade-up">
+  <div class="proj-grid proj-grid-2col fade-up">
 
-    <div class="proj-card">
+    <div class="proj-card proj-card-featured">
       <div class="proj-status-dot dot-done"></div>
-      <div class="proj-tag">Completo</div>
-      <h3 class="proj-title">Proyecto Integrador de Competencias 1</h3>
-      <p class="proj-desc">Diseño e integración de un sistema electrónico que articula conocimientos de circuitos, programación y mecánica, desarrollado en equipo durante el segundo semestre.</p>
+      <div class="proj-tag">Proyecto Integrador · 2023</div>
+      <h3 class="proj-title">Proyecto Integrador de Competencias I</h3>
+      <p class="proj-desc">Sistema pick-to-light para almacén desarrollado con Arduino. Partiendo de un análisis de necesidades real con diagrama de Ishikawa, el equipo diseñó, programó y puso en operación el sistema completo. Evidencia central de las competencias de diseño, operación y trabajo en equipo.</p>
       <div class="proj-techs">
+        <span class="tech-tag">Arduino</span>
         <span class="tech-tag">Circuitos</span>
         <span class="tech-tag">Trabajo en equipo</span>
         <span class="tech-tag">Documentación</span>
@@ -899,65 +1040,25 @@
       <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver evidencia en Drive ↗</a>
     </div>
 
-    <div class="proj-card">
+    <div class="proj-card proj-card-featured">
       <div class="proj-status-dot dot-done"></div>
-      <div class="proj-tag">Completo</div>
-      <h3 class="proj-title">Proyecto Integrador de Competencias 2</h3>
-      <p class="proj-desc">Integración de hardware y software para resolver una problemática técnica real, aplicando tecnologías de microprocesamiento y electrónica digital en equipo.</p>
+      <div class="proj-tag">Proyecto Integrador · 2024</div>
+      <h3 class="proj-title">Proyecto Integrador de Competencias II</h3>
+      <p class="proj-desc">PCB propia con ATmega328PB, sensores ambientales y comunicación SigFox (red IoT de largo alcance). Incluye gemelo digital del sistema y matriz de decisión de componentes documentada. La evidencia de diseño e innovación más completa del portfolio.</p>
       <div class="proj-techs">
-        <span class="tech-tag">Microcontroladores</span>
-        <span class="tech-tag">Electrónica digital</span>
-        <span class="tech-tag">Programación</span>
+        <span class="tech-tag">PCB · KiCad</span>
+        <span class="tech-tag">ATmega328PB</span>
+        <span class="tech-tag">SigFox · IoT</span>
+        <span class="tech-tag">Gemelo digital</span>
       </div>
       <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver evidencia en Drive ↗</a>
     </div>
 
-    <div class="proj-card">
-      <div class="proj-status-dot dot-done"></div>
-      <div class="proj-tag">Laboratorio</div>
-      <h3 class="proj-title">Laboratorios de Electrónica Analógica</h3>
-      <p class="proj-desc">Serie de laboratorios con amplificadores operacionales, filtros activos y circuitos de acondicionamiento de señal. Documentación completa con mediciones y análisis.</p>
-      <div class="proj-techs">
-        <span class="tech-tag">Osciloscopio</span>
-        <span class="tech-tag">OpAmps</span>
-        <span class="tech-tag">SPICE</span>
-        <span class="tech-tag">Filtros activos</span>
-      </div>
-      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver evidencia en Drive ↗</a>
-    </div>
-
-    <div class="proj-card">
-      <div class="proj-status-dot dot-done"></div>
-      <div class="proj-tag">Laboratorio</div>
-      <h3 class="proj-title">Laboratorios de Electrónica Digital</h3>
-      <p class="proj-desc">Implementación de circuitos lógicos combinacionales y secuenciales. Diseño y simulación con compuertas, flip-flops y contadores. Diagnóstico de fallas.</p>
-      <div class="proj-techs">
-        <span class="tech-tag">Lógica combinacional</span>
-        <span class="tech-tag">Flip-flops</span>
-        <span class="tech-tag">FPGA</span>
-      </div>
-      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver evidencia en Drive ↗</a>
-    </div>
-
-    <div class="proj-card">
-      <div class="proj-status-dot dot-done"></div>
-      <div class="proj-tag">Laboratorio</div>
-      <h3 class="proj-title">Tecnologías de Microprocesamiento</h3>
-      <p class="proj-desc">Programación de microcontroladores para control de periféricos, comunicación serie y gestión de interrupciones. Proyectos con Arduino y plataformas embebidas.</p>
-      <div class="proj-techs">
-        <span class="tech-tag">Arduino</span>
-        <span class="tech-tag">C/C++</span>
-        <span class="tech-tag">UART · I2C</span>
-        <span class="tech-tag">Sensores</span>
-      </div>
-      <a class="proj-drive-link" href="https://drive.google.com/drive/u/1/folders/1PJozcpmSTPEWUJyWsWH0GECPV4-CmeGv" target="_blank">Ver evidencia en Drive ↗</a>
-    </div>
-
-    <div class="proj-card">
+    <div class="proj-card proj-card-featured">
       <div class="proj-status-dot dot-wip"></div>
-      <div class="proj-tag">En proceso</div>
+      <div class="proj-tag">En proceso · 2026</div>
       <h3 class="proj-title">Práctica Profesional Curricular</h3>
-      <p class="proj-desc">Inserción en empresa del sector industrial. Actualmente en fase de relevamiento inicial, con foco en operación y mantenimiento de sistemas automatizados.</p>
+      <p class="proj-desc">[Agregar descripción corta] Actualmente en desarrollo. Evidencia de operación y mantenimiento de sistemas en entorno industrial real.</p>
       <div class="proj-techs">
         <span class="tech-tag">Fabricación</span>
         <span class="tech-tag">Soldadura en horno</span>
@@ -966,49 +1067,18 @@
       </div>
     </div>
 
-    <div class="proj-card">
-      <div class="proj-status-dot dot-done"></div>
-      <div class="proj-tag">Certificado · UTEC</div>
-      <h3 class="proj-title">Curso de Soldadura</h3>
-      <p class="proj-desc">Formación en técnicas de soldadura con enfoque en fabricación de componentes metálicos, normas de seguridad y calidad en el proceso de unión.</p>
+    <div class="proj-card proj-card-featured">
+      <div class="proj-status-dot dot-wip"></div>
+      <div class="proj-tag">En desarrollo · 2026</div>
+      <h3 class="proj-title">Anteproyecto de Tecnólogo</h3>
+      <p class="proj-desc">[Agregar descripción corta] Proyecto final de carrera en fase de definición. Integra las cuatro áreas de competencia del perfil de egreso del Tecnólogo en Mecatrónica.</p>
       <div class="proj-techs">
-        <span class="tech-tag">Soldadura</span>
-        <span class="tech-tag">Seguridad laboral</span>
-        <span class="tech-tag">Fabricación</span>
+        <span class="tech-tag">Por definir</span>
+        <span class="tech-tag">Integración</span>
+        <span class="tech-tag">Investigación</span>
       </div>
-      <a class="proj-drive-link" href="LINK_FOTO_CERTIFICADO_SOLDADURA" target="_blank">
-        Ver certificado ↗
-      </a>
     </div>
 
-     <div class="proj-card">
-      <div class="proj-status-dot dot-done"></div>
-      <div class="proj-tag">Certificado · Externo</div>
-      <h3 class="proj-title">Voluntariado — Congreso UTEC</h3>
-      <p class="proj-desc">Participación activa en organización y desarrollo de Congreso académico de UTEC. Informe de voluntariado como evidencia formal de competencias transversales.</p>
-      <div class="proj-techs">
-        <span class="tech-tag">Comunicación</span>
-        <span class="tech-tag">Trabajo en equipo</span>
-        <span class="tech-tag">Organización</span>
-      </div>
-      <a class="proj-drive-link" href="https://drive.google.com/file/d/1cPV8Wqjq3Zg3cf5JNEX6m4Z-jkbTcGRu/view?usp=drive_link" target="_blank">
-        Ver Certificado ↗
-      </a>
-    </div>
-
-    <div class="proj-card">
-      <div class="proj-status-dot dot-done"></div>
-      <div class="proj-tag">Fabricación Digital · EDU</div>
-      <h3 class="proj-title">Mariposa Autómata</h3>
-      <p class="proj-desc">Trabajo final del curso EDU de Introducción al Corte Láser. Diseño y fabricación de mariposa autómata con mecanismo de movimiento, usando corte láser (2024).</p>
-      <div class="proj-techs">
-        <span class="tech-tag">Corte Láser</span>
-        <span class="tech-tag">Diseño 2D</span>
-        <span class="tech-tag">Fabricación Digital</span>
-      </div>
-      <a class="proj-drive-link" href="LINK_PORTFOLIO_MARIPOSA_AUTOMATA" target="_blank">Ver trabajo final ↗</a>
-    </div>
-  
   </div>
   
 </section>
